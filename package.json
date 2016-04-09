@@ -2,7 +2,7 @@
   "name": "trunk-production",
   "version": "1.0.0",
   "description": "production site for the Trunk mask",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
