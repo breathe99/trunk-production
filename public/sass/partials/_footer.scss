@@ -1,0 +1,30 @@
+// Signup field
+.signup {
+  display: flex;
+  text-align: center;
+  height: 500px;
+  min-height: 400px;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  
+  .footer {
+    position: relative;
+    
+    h2 {
+      font-size: 2.75em;
+      font-weight: 600;
+      color: #4B4237;
+    }
+  }
+
+  input {
+    width: 65%;
+    margin-right: 20px;
+  }
+  
+  label {
+    left: 5.75rem;
+  }
+}

@@ -1,0 +1,90 @@
+.large {
+    margin-top: -150px;
+    height: 600px !important;
+}
+
+.title-card {
+  height: 100%;
+  padding: 2em;
+}
+
+.title-card .title {
+  font-size: 70px;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 0;
+}
+
+.title-card .title-text {
+  font-size: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.title-card #title-render {
+  margin: 65px 10px;
+  height: 30%;
+  pointer-events: none;
+
+  @include desktop {
+    width: 200px;
+    margin: 3em auto;
+  }
+}
+
+.title-card {
+//  color: darken(color(green), 10) !important;
+  
+  .color-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin: 0;
+    margin-top: -.5em;
+//    color: #fff;
+  }
+  
+  .colors {
+    padding: .75em;
+    position: relative;
+    width: 100%;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    div {
+      height: 100%;
+      width: 50%;
+    }
+  }
+}
+
+.forest {
+  background: color(forest);
+  color: lighten(color(forest), 40) !important;
+}
+
+.green {
+  background: color(green);
+  color: darken(color(green), 20) !important;
+}
+
+.white {
+  background: color(white);
+  color: darken(color(white), 30) !important;
+}
+
+.blue {
+  background: color(blue) !important;
+  color: darken(color(blue), 30) !important;
+}
+
+.navy {
+  background: color(navy) !important;
+  color: lighten(color(navy), 40) !important;
+}

@@ -1,0 +1,29 @@
+#logo {
+  pointer-events: none;
+}
+
+nav {
+  margin: 0;
+  overflow: hidden;
+}
+
+nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+// Create a style for first level elements
+nav > ul > li > a {
+  color: #eee;
+  font-size: 20px;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}

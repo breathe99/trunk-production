@@ -1,0 +1,17 @@
+// Import media queries
+@import "partials/breakpoints";
+
+// Import functions/config
+@import "partials/functions";
+@import "partials/config";
+
+// Import all partials for compile
+@import "partials/hero";
+@import "partials/nav";
+@import "partials/cards";
+@import "partials/card/map";
+@import "partials/card/quote";
+@import "partials/card/stat";
+@import "partials/card/title";
+@import "partials/footer";
+@import "partials/type";

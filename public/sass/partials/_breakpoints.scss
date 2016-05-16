@@ -1,0 +1,36 @@
+// Breakpoint mixins
+@mixin mobile {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 480px + 1) and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 960px + 1) {
+    @content;
+  }
+}
+
+@mixin desktop_wide {
+  @media only screen and (min-width: 1200px + 1) {
+    @content;
+  }
+}
+
+@mixin mobile_tablet {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet_desktop {
+  @media only screen and (min-width: 480px + 1) {
+    @content;
+  }
+}

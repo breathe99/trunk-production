@@ -1,0 +1,205 @@
+.map {
+  .map-stat {
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      font-size: 1.2em;
+      margin: 0;
+    }
+    .map-subtext {
+      font-size: .85em;
+      font-weight: 600;
+      text-align: center;
+    }
+    .map-aqi {
+      font-size: 9em;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -2px;
+      text-align: center;
+      margin: 0;
+      .map-aqi-sub {
+        margin-left: -20px;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: normal;
+      }
+    }
+    .map-date {
+      margin-right: auto;
+      align-self: flex-end;
+    }
+    .map-city {
+      font-weight: 600;
+      font-size: 1.5em;
+      margin-left: auto;
+    }
+  }
+  .color-card {
+    height: 450px;
+    color: #fff;
+    .activator {
+      padding: 120px 50px 0px 50px;
+    }
+  }
+}
+
+.abs {
+  position: absolute;
+}
+
+.card-expand {
+  .map-left {
+    overflow: hidden;
+    margin-left: 2em;
+    margin-bottom: auto;
+    margin-top: 2em;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    .map-inner-aqi {
+      margin-right: auto;
+      .aqi-value {
+        font-size: 9em;
+        color: #fff;
+        font-weight: 800;
+        letter-spacing: -2px;
+        text-align: center;
+        margin-top: -40px;
+        margin-bottom: -40px;
+        display: block;
+      }
+      .map-inner-date {
+        font-weight: 400;
+      }
+    }
+    .card-heading {
+      margin-top: 30px;
+      width: 70%;
+    }
+    .card-text {
+      width: 70%;
+    }
+  }
+  .map-right {
+    width: 145px;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    .map-city {
+      color: white !important;
+      &:hover {
+        color: white !important;
+      }
+    }
+    .map-city-list {
+      margin: 0;
+      list-style: none;
+      li {
+        cursor: pointer;
+        padding: 5px;
+        text-align: right;
+        &:hover,
+        &.li-city-hover {
+          color: lighten(color(navy), 60);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .map-svg {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    top: 0;
+    left: 10%;
+    svg {
+      height: 100%;
+      width: 100%;
+      
+      circle {
+        cursor: pointer;
+      }
+    }
+    #map-layer {
+      width: 100%;
+      height: 100%;
+    }
+    #map-pollution {
+      .pol-point {
+        r: 2.5;
+        //        stroke: lighten(color(navy), 60);
+        //        stroke-width: 1;
+        fill: #fff;
+        &:hover,
+        &.hover {
+          fill: color(blue);
+          r: 4.5 !important;
+          transition: r .2s ease-out;
+        }
+        &.pulsing {
+          fill: lighten(color(green), 10);
+          transition: r .2s ease;
+        }
+      }
+      #karachi {
+        cx: 140;
+        cy: 293;
+      }
+      #new-deli {
+        cx: 190;
+        cy: 271;
+      }
+      #mumbai {
+        cx: 168;
+        cy: 330;
+      }
+      #pune {
+        cx: 178;
+        cy: 337;
+      }
+      #bangkok {
+        cx: 329;
+        cy: 354;
+      }
+      #beijing {
+        cx: 378;
+        cy: 182;
+      }
+      #hanoi {
+        cx: 354;
+        cy: 306;
+      }
+      #macao {
+        cx: 394;
+        cy: 288;
+      }
+      #manila {
+        cx: 448;
+        cy: 322;
+      }
+      #seoul {
+        cx: 435;
+        cy: 176;
+      }
+      #shangai {
+        cx: 422;
+        cy: 222;
+      }
+      #tokyo {
+        cx: 492;
+        cy: 155;
+      }
+    }
+  }
+}

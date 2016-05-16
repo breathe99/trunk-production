@@ -1,0 +1,580 @@
+/* line 2, ../sass/partials/_hero.scss */
+.container {
+  width: 85% !important;
+}
+@media only screen and (max-width: 992px) {
+  /* line 2, ../sass/partials/_hero.scss */
+  .container {
+    width: 100% !important;
+  }
+}
+
+/* line 11, ../sass/partials/_hero.scss */
+.background-container {
+  height: 1500px;
+  margin: 0 auto;
+  padding-top: 40px;
+  max-width: 1200px;
+  background: #8e9eab;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(top, #8e9eab, #B4B4B4);
+  background: -o-linear-gradient(top, #8e9eab, #eef2f3);
+  background: linear-gradient(to bottom, #B4B4B4, #fff);
+}
+
+/* line 27, ../sass/partials/_hero.scss */
+.flip {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+/* line 37, ../sass/partials/_hero.scss */
+.hero {
+  display: block;
+  pointer-events: none;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+@media only screen and (max-width: 992px) {
+  /* line 37, ../sass/partials/_hero.scss */
+  .hero {
+    display: block;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* line 46, ../sass/partials/_hero.scss */
+  .hero .col {
+    margin: auto !important;
+    float: none !important;
+    width: 60% !important;
+  }
+}
+
+/* line 1, ../sass/partials/_nav.scss */
+#logo {
+  pointer-events: none;
+}
+
+/* line 5, ../sass/partials/_nav.scss */
+nav {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* line 10, ../sass/partials/_nav.scss */
+nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 16, ../sass/partials/_nav.scss */
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* line 22, ../sass/partials/_nav.scss */
+nav > ul > li > a {
+  color: #eee;
+  font-size: 20px;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
+
+/* line 1, ../sass/partials/_cards.scss */
+.cards {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../sass/partials/_cards.scss */
+.hover:hover {
+  z-index: 99;
+  position: relative;
+  box-shadow: 0 2px 35px 2px rgba(0, 0, 0, 0.4);
+  transition: box-shadow .25s;
+}
+
+/* line 13, ../sass/partials/_cards.scss */
+.card-panel {
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* line 19, ../sass/partials/_cards.scss */
+.card {
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+/* line 25, ../sass/partials/_cards.scss */
+.card .hidden {
+  display: none !important;
+}
+/* line 28, ../sass/partials/_cards.scss */
+.card .text-reveal {
+  width: 45%;
+  float: left;
+  margin: 100px 10px;
+}
+/* line 33, ../sass/partials/_cards.scss */
+.card .main-left {
+  width: 50% !important;
+  float: left !important;
+  margin: 100px 10px !important;
+}
+
+/* line 40, ../sass/partials/_cards.scss */
+.card-heading {
+  color: white;
+  line-height: 1.2;
+  font-size: 19px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+/* line 49, ../sass/partials/_cards.scss */
+.card-text {
+  color: white;
+  font-family: 'Lato', Helvetica;
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* line 57, ../sass/partials/_cards.scss */
+.no-margin {
+  padding: 0 !important;
+}
+
+/* line 2, ../sass/partials/card/_map.scss */
+.map .map-stat {
+  padding: 2em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* line 10, ../sass/partials/card/_map.scss */
+.map .map-stat p {
+  font-size: 1.2em;
+  margin: 0;
+}
+/* line 14, ../sass/partials/card/_map.scss */
+.map .map-stat .map-subtext {
+  font-size: .85em;
+  font-weight: 600;
+  text-align: center;
+}
+/* line 19, ../sass/partials/card/_map.scss */
+.map .map-stat .map-aqi {
+  font-size: 9em;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -2px;
+  text-align: center;
+  margin: 0;
+}
+/* line 26, ../sass/partials/card/_map.scss */
+.map .map-stat .map-aqi .map-aqi-sub {
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+/* line 33, ../sass/partials/card/_map.scss */
+.map .map-stat .map-date {
+  margin-right: auto;
+  align-self: flex-end;
+}
+/* line 37, ../sass/partials/card/_map.scss */
+.map .map-stat .map-city {
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-left: auto;
+}
+/* line 43, ../sass/partials/card/_map.scss */
+.map .color-card {
+  height: 450px;
+  color: #fff;
+}
+/* line 46, ../sass/partials/card/_map.scss */
+.map .color-card .activator {
+  padding: 120px 50px 0px 50px;
+}
+
+/* line 52, ../sass/partials/card/_map.scss */
+.abs {
+  position: absolute;
+}
+
+/* line 57, ../sass/partials/card/_map.scss */
+.card-expand .map-left {
+  overflow: hidden;
+  margin-left: 2em;
+  margin-bottom: auto;
+  margin-top: 2em;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+/* line 66, ../sass/partials/card/_map.scss */
+.card-expand .map-left .map-inner-aqi {
+  margin-right: auto;
+}
+/* line 68, ../sass/partials/card/_map.scss */
+.card-expand .map-left .map-inner-aqi .aqi-value {
+  font-size: 9em;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -2px;
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: -40px;
+  display: block;
+}
+/* line 78, ../sass/partials/card/_map.scss */
+.card-expand .map-left .map-inner-aqi .map-inner-date {
+  font-weight: 400;
+}
+/* line 82, ../sass/partials/card/_map.scss */
+.card-expand .map-left .card-heading {
+  margin-top: 30px;
+  width: 70%;
+}
+/* line 86, ../sass/partials/card/_map.scss */
+.card-expand .map-left .card-text {
+  width: 70%;
+}
+/* line 90, ../sass/partials/card/_map.scss */
+.card-expand .map-right {
+  width: 145px;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 2em;
+  padding-right: 2em;
+  padding-top: 2em;
+}
+/* line 99, ../sass/partials/card/_map.scss */
+.card-expand .map-right .map-city {
+  color: white !important;
+}
+/* line 101, ../sass/partials/card/_map.scss */
+.card-expand .map-right .map-city:hover {
+  color: white !important;
+}
+/* line 105, ../sass/partials/card/_map.scss */
+.card-expand .map-right .map-city-list {
+  margin: 0;
+  list-style: none;
+}
+/* line 108, ../sass/partials/card/_map.scss */
+.card-expand .map-right .map-city-list li {
+  cursor: pointer;
+  padding: 5px;
+  text-align: right;
+}
+/* line 112, ../sass/partials/card/_map.scss */
+.card-expand .map-right .map-city-list li:hover, .card-expand .map-right .map-city-list li.li-city-hover {
+  color: #97bfe8;
+  text-decoration: underline;
+}
+/* line 120, ../sass/partials/card/_map.scss */
+.card-expand .map-svg {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  top: 0;
+  left: 10%;
+}
+/* line 126, ../sass/partials/card/_map.scss */
+.card-expand .map-svg svg {
+  height: 100%;
+  width: 100%;
+}
+/* line 130, ../sass/partials/card/_map.scss */
+.card-expand .map-svg svg circle {
+  cursor: pointer;
+}
+/* line 134, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-layer {
+  width: 100%;
+  height: 100%;
+}
+/* line 139, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution .pol-point {
+  r: 2.5;
+  fill: #fff;
+}
+/* line 144, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution .pol-point:hover, .card-expand .map-svg #map-pollution .pol-point.hover {
+  fill: #5FCFF0;
+  r: 4.5 !important;
+  transition: r .2s ease-out;
+}
+/* line 150, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution .pol-point.pulsing {
+  fill: #91c772;
+  transition: r .2s ease;
+}
+/* line 155, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #karachi {
+  cx: 140;
+  cy: 293;
+}
+/* line 159, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #new-deli {
+  cx: 190;
+  cy: 271;
+}
+/* line 163, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #mumbai {
+  cx: 168;
+  cy: 330;
+}
+/* line 167, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #pune {
+  cx: 178;
+  cy: 337;
+}
+/* line 171, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #bangkok {
+  cx: 329;
+  cy: 354;
+}
+/* line 175, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #beijing {
+  cx: 378;
+  cy: 182;
+}
+/* line 179, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #hanoi {
+  cx: 354;
+  cy: 306;
+}
+/* line 183, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #macao {
+  cx: 394;
+  cy: 288;
+}
+/* line 187, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #manila {
+  cx: 448;
+  cy: 322;
+}
+/* line 191, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #seoul {
+  cx: 435;
+  cy: 176;
+}
+/* line 195, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #shangai {
+  cx: 422;
+  cy: 222;
+}
+/* line 199, ../sass/partials/card/_map.scss */
+.card-expand .map-svg #map-pollution #tokyo {
+  cx: 492;
+  cy: 155;
+}
+
+/* line 1, ../sass/partials/card/_quote.scss */
+.quote-card {
+  height: 450px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  background: url("../images/quote-bg4.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/* line 13, ../sass/partials/card/_quote.scss */
+.quote-card .quote-main {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* line 18, ../sass/partials/card/_quote.scss */
+.quote-card .quote-secondary {
+  font-size: 16px;
+  text-align: right;
+}
+
+/* line 1, ../sass/partials/card/_stat.scss */
+.stat-card {
+  height: 450px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 9, ../sass/partials/card/_stat.scss */
+.stat-card .stat-main {
+  font-size: 90px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 0;
+}
+
+/* line 18, ../sass/partials/card/_stat.scss */
+.stat-card .stat-detail {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* line 1, ../sass/partials/card/_title.scss */
+.large {
+  margin-top: -150px;
+  height: 600px !important;
+}
+
+/* line 6, ../sass/partials/card/_title.scss */
+.title-card {
+  height: 100%;
+  padding: 2em;
+}
+
+/* line 11, ../sass/partials/card/_title.scss */
+.title-card .title {
+  font-size: 70px;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-align: center;
+  margin: 0;
+}
+
+/* line 20, ../sass/partials/card/_title.scss */
+.title-card .title-text {
+  font-size: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* line 28, ../sass/partials/card/_title.scss */
+.title-card #title-render {
+  margin: 65px 10px;
+  height: 30%;
+  pointer-events: none;
+}
+@media only screen and (min-width: 961px) {
+  /* line 28, ../sass/partials/card/_title.scss */
+  .title-card #title-render {
+    width: 200px;
+    margin: 3em auto;
+  }
+}
+
+/* line 42, ../sass/partials/card/_title.scss */
+.title-card .color-title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin: 0;
+  margin-top: -.5em;
+}
+/* line 51, ../sass/partials/card/_title.scss */
+.title-card .colors {
+  padding: .75em;
+  position: relative;
+  width: 100%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 60, ../sass/partials/card/_title.scss */
+.title-card .colors div {
+  height: 100%;
+  width: 50%;
+}
+
+/* line 67, ../sass/partials/card/_title.scss */
+.forest {
+  background: #305E26;
+  color: #90cd83 !important;
+}
+
+/* line 72, ../sass/partials/card/_title.scss */
+.green {
+  background: #75B94D;
+  color: #47732d !important;
+}
+
+/* line 77, ../sass/partials/card/_title.scss */
+.white {
+  background: #FFF;
+  color: #b3b3b3 !important;
+}
+
+/* line 82, ../sass/partials/card/_title.scss */
+.blue {
+  background: #5FCFF0 !important;
+  color: #1084a6 !important;
+}
+
+/* line 87, ../sass/partials/card/_title.scss */
+.navy {
+  background: #0E263F !important;
+  color: #448bd5 !important;
+}
+
+/* line 2, ../sass/partials/_footer.scss */
+.signup {
+  display: flex;
+  text-align: center;
+  height: 500px;
+  min-height: 400px;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+/* line 12, ../sass/partials/_footer.scss */
+.signup .footer {
+  position: relative;
+}
+/* line 15, ../sass/partials/_footer.scss */
+.signup .footer h2 {
+  font-size: 2.75em;
+  font-weight: 600;
+  color: #4B4237;
+}
+/* line 22, ../sass/partials/_footer.scss */
+.signup input {
+  width: 65%;
+  margin-right: 20px;
+}
+/* line 27, ../sass/partials/_footer.scss */
+.signup label {
+  left: 5.75rem;
+}
+
+/* line 1, ../sass/partials/_type.scss */
+.secondary {
+  margin: 0;
+  margin-top: -10px;
+  padding: 0;
+  text-align: center;
+  font-size: 18px;
+}
