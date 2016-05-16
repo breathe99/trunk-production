@@ -54,7 +54,7 @@
                     <div class="aqi-value">142</div>
                     <p class="map-inner-date map-subtext">Updated: <span class="date-value">12:54PM | 2/14/26</span></p>
                   </div>
-                  
+
                   <h1 class="card-heading">Air pollution in Eastern Asia is at an all time high. Let's do something about it. </h1>
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
@@ -74,7 +74,7 @@
                     <li value="Tokyo">Tokyo</li>
                   </ul>
                 </div>
-                
+
                 <div class="map-svg">
                   <!--                  <img src="images/map.svg" alt="East Asia Pollution Map">-->
                   <svg version="1.1" viewbox="0 90 400 400">
@@ -800,18 +800,18 @@
             c0.1-0.078,0.145-0.223,0.278-0.223h0.869c0.902,0,1.358-0.379,2.238-0.579c0.49-0.111,0.668-0.534,1.169-0.534
             c0.067,0,0.1,0.045,0.167,0.045c-0.123,1.047-1.024,1.292-2.004,1.782c0.134,0.234,0.256,0.49,0.535,0.49
             c0.49,0,0.734-0.301,1.158-0.535c0.401-0.223,0.835-0.089,1.113-0.445C5.268,69.182,5.274,69.174,5.281,69.165L5.281,69.165z"></path>
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
+
+
+
+
+
+
+
+
+
+
+
+
                       <path  fill="#123257" stroke="#2461BE" stroke-miterlimit="22.9256" d="M72.117,275.77l0.178,0.067h1.504
             c0.156,0,0.256,0.067,0.412,0.067c1.147,0,2.405-0.412,2.494-1.559c-0.456-0.034-0.702-0.178-1.158-0.178
             c-0.768,0-1.114,0.49-1.826,0.757c-0.256,0.089-0.446,0-0.713,0.045C72.551,275.047,72.328,275.369,72.117,275.77L72.117,275.77z
@@ -872,15 +872,15 @@
             c0.067-1.693,0.802-2.583,0.802-4.276c0-0.624-0.712-0.802-0.712-1.425c0-0.356,0.066-0.535,0.089-0.891
             c0.378-0.022,0.579-0.089,0.957-0.089c0.334,0,0.401,0.445,0.735,0.445c0.178,0,0.2-0.245,0.357-0.267
             C39.914,185.91,40.121,185.094,40.344,184.18z"></path>
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
+
+
+
+
+
+
+
+
+
                       <path  fill="#123257" stroke="#2461BE" stroke-miterlimit="22.9256" d="M76.625,150.951c0.139,0.042,0.279,0.061,0.457,0.061
             c0.445,0,0.69-0.178,1.136-0.178c0.49,0,0.534,0.712,1.024,0.712c0.167,0,0.245-0.133,0.412-0.133h1.136
             c0.579,0,0.891-0.223,1.436-0.401c0.702-0.234,1.102-0.367,1.737-0.757c0.435-0.267,0.535-0.802,1.047-0.802
@@ -2667,12 +2667,12 @@
           </div>
         </div>
       </div>
-      <div class="row cards">
+      <!-- <div class="row cards">
         <div class="col s12 m12 l12 no-margin">
           <iframe width="100%" height="480" src="https://sketchfab.com/models/43362c14bd714da5ae5398ff32a6a7a7/embed?autostart=1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 
         </div>
-      </div>
+      </div> -->
       <div class="row cards">
         <div class="card-div col s12 m12 l6 no-margin hover click">
           <div class="card blue darken-4 ">
@@ -2703,9 +2703,12 @@
         <div class="footer">
           <h2>Sign up to recieve news on Ol'Factory</h2>
           <div class="input-field col s12 m12 l12">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
-            <a class="waves-effect waves-light btn">Confirm</a>
+            <form class="" action="/emails" method="POST">
+              <input id="email" type="email" class="validate" name="email">
+              <label for="email">Email</label>
+              <button type="submit" class="waves-effect waves-light btn">Confirm</button>
+            </form>
+
           </div>
         </div>
       </div>
