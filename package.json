@@ -17,6 +17,7 @@
     "monk": "^1.0.1"
   },
   "devDependencies": {
-    "mongoose": "^4.4.17"
+    "mongoose": "^4.4.17",
+    "nodemon": "^1.9.2"
   }
 }
