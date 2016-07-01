@@ -1,17 +1,15 @@
-// Import media queries
-@import "partials/breakpoints";
+// Susy
+@import "grid/susy"
 
 // Import functions/config
-@import "partials/functions";
-@import "partials/config";
+@import "base/variables";
+@import "base/functions";
+@import "base/global";
+
+// Import media queries
+@import "pbase/breakpoints";
 
 // Import all partials for compile
-@import "partials/hero";
-@import "partials/nav";
-@import "partials/cards";
-@import "partials/card/map";
-@import "partials/card/quote";
-@import "partials/card/stat";
-@import "partials/card/title";
-@import "partials/footer";
-@import "partials/type";
+@import "components/hero";
+@import "components/nav";
+@import "components/footer";
