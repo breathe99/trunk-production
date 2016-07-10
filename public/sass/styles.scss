@@ -1,7 +1,8 @@
 // Susy
-@import "grid/susy"
+@import "grid/susy";
 
 // Import functions/config
+@import "base/normalize";
 @import "base/variables";
 @import "base/functions";
 @import "base/global";
