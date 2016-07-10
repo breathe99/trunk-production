@@ -1,5 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .hero
+    nav.navbar
+      .navbar__logo
+        a
+          img#logo(src='../images/logo@2x.png')
+      .navbar__links
+        ul
+          li
+            a.nav-link(href='#about').
+              ABOUT
+          li
+            a.nav-link(href='#kickstarter').
+              KICKSTARTER
+          li
+            a.nav-link(href='#support').
+              SUPPORT
+    section.hero__content
+        
