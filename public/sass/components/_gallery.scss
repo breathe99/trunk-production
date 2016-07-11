@@ -1,7 +1,19 @@
 .gallery {
-
+  @include span(12);
 }
 
 .gallery__photos {
-  
+  @include container(840px);
+
+  .gallery__photo {
+    float: left;
+    width: 50%;
+
+    @include mobile_tablet {
+      width: 100%;
+      float: none;
+      margin: auto;
+      text-align: center;
+    }
+  }
 }

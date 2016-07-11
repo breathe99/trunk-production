@@ -440,6 +440,35 @@ hr {
   .about__features .about__feature {
     margin-bottom: 40px; }
 
+.gallery {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+.gallery__photos {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 85, 102, 0.25), rgba(143, 121, 143, 0.25) 50%, transparent 50%);
+  background-size: 8.69565%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top; }
+  .gallery__photos:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .gallery__photos .gallery__photo {
+    float: left;
+    width: 50%; }
+    @media only screen and (max-width: 992px) {
+      .gallery__photos .gallery__photo {
+        width: 100%;
+        float: none;
+        margin: auto;
+        text-align: center; } }
+
 .signup {
   display: flex;
   text-align: center;
