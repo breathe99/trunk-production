@@ -1,53 +1,30 @@
-// Make container 100% on breakpoint
-.container {
-  
-  width: 85% !important;
-  
-  @include mobile_tablet {
-    width: 100% !important;
-  }
-}
-
-.background-container {
-  height: 1500px;
-  margin: 0 auto;
-  padding-top: 40px;
-  max-width: 1200px;
-
-  background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(top, #8e9eab, #B4B4B4);
-  background: -o-linear-gradient(top, #8e9eab, #eef2f3);
-  background: linear-gradient(to bottom, #B4B4B4, #fff);
-
-  @include desktop_wide(){
-//    margin: 0 80px 0px 80px;
-  };
-}
-
-.flip {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
-
-// Hide the hero on desktop
 .hero {
-  display: block;
-  pointer-events: none;
-  margin-top: 5em;
-  margin-bottom: 5em;
+  height: 800px; // TODO: responsive
+  padding-top: 6 * $unit;
+}
 
-  @include mobile_tablet {
-    display: block;
+.hero__content {
+  text-align: center;
+  padding-top: 9 * $unit;
+
+  .hero__title {
   }
-  .col {
-    @include mobile_tablet {
-      margin: auto !important;
-      float: none !important;
-      width: 60% !important;
+
+  .hero__desc {
+    margin-top: 34 * $unit;
+    @include full;
+
+    .hero__desc__statement {
+      @include pre(3);
+      @include span(6 of 12);
+      @include break();
+    }
+
+    .hero__btn {
+      @include pre(4);
+      @include span(4 of 12);
+      margin-top: 4 * $unit;
     }
   }
+
 }

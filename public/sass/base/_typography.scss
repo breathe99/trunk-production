@@ -1,0 +1,32 @@
+$line-height: 1.625;
+
+.body {
+	font-family: ProximaNova-Regular;
+	font-size: 1em;
+	line-height: 1 * $line-height;
+	color: $cool-grey;
+}
+
+h1 {
+  font-family: ProximaNova-Light;
+  font-size: 2.5em;
+  line-height: 2;
+  letter-spacing: -1.1px;
+  color: $gunmetal;
+}
+
+h2 {
+  font-family: ProximaNova-Light;
+  font-size: 1.6875em;
+  line-height: 1.5;
+  letter-spacing: -1.1px;
+  color: $gunmetal;
+}
+
+.title {
+  font-family: ProximaNova-Light;
+  font-size: 3em;
+  line-height: 1.5;
+  letter-spacing: -1.3px;
+  color: $gunmetal;
+}

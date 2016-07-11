@@ -5,3 +5,22 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+body {
+  font-family: ProximaNova-Regular; // TODO fix typography
+  text-size: 16px;
+  @include container(1024px);
+}
+
+section {
+  @include full;
+  padding-top: 9 * $unit;
+  padding-bottom: 9 * $unit;
+}
+
+hr {
+  @include pre(1);
+  @include span(10);
+  border-color: $very-light-blue;
+  border-style: solid;
+}

@@ -1,16 +1,25 @@
 // Susy
 @import "grid/susy";
 
+// Gutenberg
+// @import "type/gutenberg.scss";
+
 // Import functions/config
 @import "base/normalize";
 @import "base/variables";
 @import "base/functions";
+@import "base/typography";
 @import "base/global";
 
 // Import media queries
 @import "base/breakpoints";
 
 // Import all partials for compile
+@import "components/btn";
 @import "components/hero";
 @import "components/nav";
+@import "components/about";
+@import "components/map";
+@import "components/preorder";
+@import "components/initiative";
 @import "components/footer";

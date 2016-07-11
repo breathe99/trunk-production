@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .hero
+  section.hero
     nav.navbar
       .navbar__logo
         a
@@ -9,13 +9,83 @@ block content
       .navbar__links
         ul
           li
-            a.nav-link(href='#about').
+            a.nav-link.body(href='#about').
               ABOUT
           li
-            a.nav-link(href='#kickstarter').
+            a.nav-link.body(href='#kickstarter').
               KICKSTARTER
           li
-            a.nav-link(href='#support').
+            a.nav-link.body(href='#support').
               SUPPORT
-    section.hero__content
-        
+    .hero__content
+      .hero__title
+        h2.
+          Trunk
+        span.title.
+          Breath confidently. Live better.
+      .hero__desc
+        .hero__desc__statement
+          span.body.
+            Breath confidently with a lightweight, urban respirator - unparalelled in style and protection.
+        .hero__btn
+          a.btn(href='#').
+            PREORDER
+  hr
+  section.about
+    .section__header
+      span.section__title.
+        Urban living doesn't have to be ugly.
+    .section__desc
+      span.
+        AQI (air quality index) is an index that reports daily air quality. Experts agree that an AQI above 150 indicates dangerous air. Check the map to see if your city is at risk.
+    .about__photos
+      .about__photo
+        img(src='../images/1.png')
+      .about__photo
+        img(src='../images/2.png')
+      .about__photo
+        img(src='../images/3.png')
+      .about__photo
+        img(src='../images/4.png')
+  hr
+  section.map
+    .section__header
+      span.section__title.
+        Urban living doesn't have to be unhealthy.
+    .section__desc
+      span.
+        AQI (air quality index) is an index that reports daily air quality. Experts agree that an AQI above 150 indicates dangerous air. Check the map to see if your city is at risk.        
+    .map__map
+      .map__card
+      .map__sub-title.
+        Your Air Ain't Clean
+      .map__sub-text.
+        AQI (air quality index) is an index that reports daily air quality. Experts agree that an AQI above 150 indicates dangerous air. Check the map to see if your city is at risk.
+  section.preorder
+    .preorder__img
+      img(src='../images/preorder.png')
+    .preorder__container
+      .preorder__title.section__header
+        Get 30% off with your preorder.
+      .preorder__desc.section__desc
+        Stay up to date with Trunk's progress. Sign up for email updates and get 30% off your mask when pre-orders launch.
+      .preorder__signup
+        input
+        .preorder__signup__btn.btn
+          span.
+            SIGN UP
+    hr
+  section.initiative
+    .section__header.
+      Ol'Factory is taking initiative.
+    .section__desc.
+      If you are in the market for a computer, there are a number of factors to consider. Will it be used for your home, your office or perhaps even your home office combo?
+    .initiative__btn.btn
+      span.
+        LEARN MORE
+    hr
+  footer
+    .footer__row
+      .logo
+        img(src='../images/logo@2x.png')
+      .footer__links

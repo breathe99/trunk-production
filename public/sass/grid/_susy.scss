@@ -2,3 +2,34 @@
 // ====
 
 @import 'susy/language/susy';
+
+// $susy: layout(12 1 fluid float inside);
+
+$susy: (
+  columns: 12,
+  gutters: 1,
+  math: fluid,
+  column-width: 40px,
+  output: float,
+  gutter-position: after,
+  flow: ltr,
+  container: auto,
+  container-position: center,
+  last-flow: to,
+  global-box-sizing: border-box,
+
+  // Used for debugging
+  debug: (
+    image: show,
+    color: rgba(#656, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true, // look for custom bix sizing mixin
+    clearfix: false,
+    rem: true,
+  )
+);
