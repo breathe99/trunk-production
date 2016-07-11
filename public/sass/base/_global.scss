@@ -24,3 +24,17 @@ hr {
   border-color: $very-light-blue;
   border-style: solid;
 }
+
+.section__header {
+  text-align: center;
+
+  .section__title {
+    display: block;
+    margin-bottom: 7 * $unit;
+  }
+
+  .section__desc {
+    @include pre(3);
+    @include span(6 of 12);
+  }
+}

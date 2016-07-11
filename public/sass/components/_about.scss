@@ -1,4 +1,16 @@
 .about {
-  height: 800px; // TODO: responsive
 
+}
+
+.about__model {
+  @include span(7 of 12);
+}
+
+.about__features {
+  @include pre(7); // TODO: remove after adding model!
+  @include span(5 of 12);
+
+  .about__feature {
+    margin-bottom: 5 * $unit;
+  }
 }
