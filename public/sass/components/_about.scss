@@ -3,12 +3,17 @@
 }
 
 .about__model {
-  @include span(7 of 12);
+  @include span(7);
+
+  img {
+    display: block;
+    margin: 150px auto;
+  }
 }
 
 .about__features {
-  @include pre(7); // TODO: remove after adding model!
-  @include span(5 of 12);
+  // @include pre(7); // TODO: remove after adding model!
+  @include span(last 5);
 
   .about__feature {
     margin-bottom: 5 * $unit;
