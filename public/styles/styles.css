@@ -440,6 +440,66 @@ hr {
   .about__features .about__feature {
     margin-bottom: 40px; }
 
+.map__map {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 85, 102, 0.25), rgba(143, 121, 143, 0.25) 50%, transparent 50%);
+  background-size: 8.69565%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top; }
+  .map__map:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .map__map .map__desc {
+    margin-top: -128px;
+    width: 56.52174%;
+    float: left;
+    margin-right: 4.34783%; }
+
+.map__svg {
+  float: right;
+  margin-right: -45px; }
+
+.map__card {
+  width: 34.78261%;
+  float: left;
+  margin-right: 4.16667%;
+  font-family: "Proxima Nova";
+  margin-top: -440px;
+  float: left;
+  max-width: 275px;
+  padding: 22px;
+  height: 264px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(148, 148, 148, 0.5);
+  color: #9395a1; }
+  .map__card .map__card__header {
+    display: flex;
+    align-items: flex-start; }
+  .map__card .card-header {
+    flex: 1;
+    align-self: flex-start; }
+  .map__card .card-title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1; }
+  .map__card .card-sub {
+    display: block;
+    margin-top: 3px;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: -0.4px; }
+  .map__card .flag {
+    border-radius: 99px;
+    display: block;
+    height: 36px;
+    width: 36px;
+    background-color: #999; }
+
 .gallery {
   width: 100%;
   float: left;
@@ -461,13 +521,18 @@ hr {
     clear: both; }
   .gallery__photos .gallery__photo {
     float: left;
-    width: 50%; }
+    width: 50%;
+    max-height: 288px; }
     @media only screen and (max-width: 992px) {
       .gallery__photos .gallery__photo {
         width: 100%;
         float: none;
         margin: auto;
-        text-align: center; } }
+        text-align: center;
+        max-height: none; } }
+    @media only screen and (max-width: 480px) {
+      .gallery__photos .gallery__photo img {
+        width: 100%; } }
 
 .signup {
   display: flex;

@@ -80,15 +80,25 @@ block content
     .section__header
       span.section__title.title.
         Urban living doesn't have to be unhealthy.
-      .section__desc
-        span.body.
-          AQI (air quality index) is an index that reports daily air quality. Experts agree that an AQI above 150 indicates dangerous air. Check the map to see if your city is at risk.        
     .map__map
+      .map__svg
+        object(type='image/svg+xml', data='/images/map-optimised.svg').
+          Your browser doesn't support SVGs. Oops.
       .map__card
-      .map__sub-title.
-        Your Air Ain't Clean
-      .map__sub-text.
-        AQI (air quality index) is an index that reports daily air quality. Experts agree that an AQI above 150 indicates dangerous air. Check the map to see if your city is at risk.
+        .map__card__header
+          .card-header
+            span.card-title.
+              Bangkok
+            span.card-sub.
+              Thailand
+          .flag
+      .map__desc
+        h3.
+          Your Air Ain't Clean
+        .body.
+          AQI (air quality index) is an index that reports daily air quality. Experts agree that an AQI above 150 indicates dangerous air. Check the map to see if your city is at risk.
+      
+  hr
   section.preorder
     .preorder__img
       img(src='../images/preorder.png')

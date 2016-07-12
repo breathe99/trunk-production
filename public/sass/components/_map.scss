@@ -1,0 +1,63 @@
+.map {
+
+}
+
+.map__map {
+  @include container(840px);
+
+  .map__desc {
+    margin-top: -128px;
+    @include span(7);
+  }
+}
+
+.map__svg {
+  float: right;
+  margin-right: -45px;
+}
+
+.map__card {
+  @include span(4 wide);
+  font-family: "Proxima Nova"; // TODO: remove?
+  margin-top: -440px;
+  float: left;
+  max-width: 275px;
+  padding: 22px;
+  height: 264px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(148, 148, 148, 0.5);
+  color: $cool-grey;
+
+  .map__card__header {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .card-header {
+    flex: 1;
+    align-self: flex-start;
+  }
+
+  .card-title {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .card-sub {
+    display: block;
+    margin-top: 3px;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: -0.4px;
+  }
+
+  .flag {
+    border-radius: 99px;
+    display: block;
+    height: 36px;
+    width: 36px;
+    background-color: #999;
+  }
+}
