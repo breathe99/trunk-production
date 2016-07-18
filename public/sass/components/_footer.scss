@@ -4,8 +4,17 @@ footer {
   padding-top: 57px;
   padding-bottom: 10 * $unit;
   height: 30 * $unit;
-  background-color: $deep-blue;
   color: #fff;
+
+  &:after {
+    content: " ";
+    background-color: #000d80;
+    display: block;
+    width: 100vw;
+    height: 240px;
+    margin-top: -57px;
+    margin-left: -14.45vw;
+  }
 }
 
 .footer__logo {

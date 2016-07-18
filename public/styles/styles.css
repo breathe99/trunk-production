@@ -690,6 +690,14 @@ footer {
   height: 240px;
   background-color: #000d80;
   color: #fff; }
+  footer:after {
+    content: " ";
+    background-color: #000d80;
+    display: block;
+    width: 100vw;
+    height: 240px;
+    margin-top: -57px;
+    margin-left: -14.45vw; }
 
 .footer__logo {
   width: 21.73913%;
