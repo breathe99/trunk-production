@@ -121,4 +121,10 @@
 
 .preorder__card__btns {
   margin-top: 7 * $unit;
+
+  .preorder__btn {
+    &:nth-child(1) {
+      margin-right: $unit * 4;
+    }
+  }
 }
