@@ -683,25 +683,26 @@ hr {
   .preorder__card__btns .preorder__btn:nth-child(1) {
     margin-right: 32px; }
 
-.signup {
-  display: flex;
-  text-align: center;
-  height: 500px;
-  min-height: 400px;
-  height: 80%;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0; }
-  .signup .footer {
-    position: relative; }
-    .signup .footer h2 {
-      font-size: 2.75em;
-      font-weight: 600;
-      color: #4B4237; }
-  .signup input {
-    width: 65%;
-    margin-right: 20px; }
-  .signup label {
-    left: 5.75rem; }
+.initiative {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center; }
+
+.initiative__btn {
+  margin-left: 34.78261%;
+  width: 30.43478%;
+  float: left;
+  margin-right: 4.34783%;
+  margin-bottom: 64px; }
+
+footer {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  height: 240px;
+  background-color: #000d80; }
 
 /*# sourceMappingURL=styles.css.map */

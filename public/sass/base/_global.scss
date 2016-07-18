@@ -40,5 +40,6 @@ hr {
     @include pre(3);
     @include span(6 of 12);
     display: block;
-    margin-bottom: 8 * $unit;  }
+    margin-bottom: 8 * $unit;
+  }
 }
