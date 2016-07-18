@@ -306,12 +306,7 @@ body {
   text-size: 16px;
   max-width: 1024px;
   margin-left: auto;
-  margin-right: auto;
-  background-image: linear-gradient(to right, rgba(102, 85, 102, 0.25), rgba(143, 121, 143, 0.25) 50%, transparent 50%);
-  background-size: 8.69565%;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-position: left top; }
+  margin-right: auto; }
   body:after {
     content: " ";
     display: block;
@@ -449,12 +444,7 @@ hr {
 .map__map {
   max-width: 840px;
   margin-left: auto;
-  margin-right: auto;
-  background-image: linear-gradient(to right, rgba(102, 85, 102, 0.25), rgba(143, 121, 143, 0.25) 50%, transparent 50%);
-  background-size: 8.69565%;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-position: left top; }
+  margin-right: auto; }
   .map__map:after {
     content: " ";
     display: block;
@@ -569,12 +559,7 @@ hr {
 .gallery__photos {
   max-width: 840px;
   margin-left: auto;
-  margin-right: auto;
-  background-image: linear-gradient(to right, rgba(102, 85, 102, 0.25), rgba(143, 121, 143, 0.25) 50%, transparent 50%);
-  background-size: 8.69565%;
-  background-origin: content-box;
-  background-clip: content-box;
-  background-position: left top; }
+  margin-right: auto; }
   .gallery__photos:after {
     content: " ";
     display: block;
@@ -700,9 +685,47 @@ hr {
 footer {
   width: 100%;
   float: left;
-  margin-left: 0;
-  margin-right: 0;
+  padding-top: 57px;
+  padding-bottom: 80px;
   height: 240px;
-  background-color: #000d80; }
+  background-color: #000d80;
+  color: #fff; }
+
+.footer__logo {
+  width: 21.73913%;
+  float: left;
+  margin-right: 4.34783%; }
+  .footer__logo img {
+    width: 136px;
+    height: 46px; }
+  .footer__logo .footer__info {
+    margin-top: 8px;
+    margin-bottom: 11.2px;
+    font-size: .75em;
+    line-height: 1.4;
+    color: #7381ff;
+    text-decoration: none; }
+
+.footer__links {
+  width: 30.43478%;
+  float: right;
+  margin-right: 0; }
+  .footer__links .footer__link {
+    width: 14.28571%;
+    float: left;
+    margin-right: 14.28571%; }
+    .footer__links .footer__link .footer__link__header {
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.3px; }
+    .footer__links .footer__link a {
+      display: block;
+      font-size: .75em;
+      line-height: 1.4;
+      color: #7381ff;
+      margin: 8px 0;
+      text-decoration: none; }
+      .footer__links .footer__link a:hover {
+        color: #a6afff; }
 
 /*# sourceMappingURL=styles.css.map */

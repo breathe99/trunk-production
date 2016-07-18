@@ -1,6 +1,54 @@
 footer {
-  @include span(12);
+  @include span(full inside no-gutters);
 
+  padding-top: 57px;
+  padding-bottom: 10 * $unit;
   height: 30 * $unit;
   background-color: $deep-blue;
+  color: #fff;
+}
+
+.footer__logo {
+  @include span(3);
+
+  img {
+    width: 136px;
+    height: 46px;
+  }
+
+  .footer__info {
+    margin-top: $unit;
+    margin-bottom: 1.4 * $unit;
+    font-size: .75em;
+    line-height: 1.4;
+    color: $periwinkle;
+    text-decoration: none;
+  }
+}
+
+.footer__links {
+  @include span(last 4 of 12);
+
+  .footer__link {
+    @include span(1 of 4);
+
+    .footer__link__header {
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: -0.3px;
+    }
+
+    a {
+      display: block;
+      font-size: .75em;
+    	line-height: 1.4;
+    	color: $periwinkle;
+      margin: $unit 0;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($periwinkle, 10);
+      }
+    }
+  }
 }
