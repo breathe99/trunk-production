@@ -8,7 +8,25 @@
   .gallery__photo {
     float: left;
     width: 50%;
-    max-height: 288px;
+    height: 288px;
+    width: 420px;
+    background-size: cover;
+
+    &:nth-child(1) {
+      background-image: url(../images/run.gif);
+    }
+
+    &:nth-child(2) {
+      background-image: url(../images/2.png);
+    }
+
+    &:nth-child(3) {
+      background-image: url(../images/3.png);
+    }
+
+    &:nth-child(4) {
+      background-image: url(../images/city.gif);
+    }
 
     @include mobile_tablet {
       width: 100%;
@@ -24,4 +42,10 @@
       }
     }
   }
+}
+
+.rounded {
+  border-radius: 6px;
+  overflow: hidden;
+  display: inline-block;
 }
