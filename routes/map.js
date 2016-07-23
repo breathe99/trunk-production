@@ -1,8 +1,11 @@
 var express = require('express');
-var osmosis = require('osmosis');
+var async = require('async');
+var Xray = require('x-ray');
 var router = express.Router();
+var x = Xray();
+var lastFetch = 0;
 
-var url = 'http://aqicn.org/city/';
+var site = 'http://aqicn.org/city/';
 var data = {
   beijing: -1,
   shanghai: -1,
@@ -16,23 +19,52 @@ var data = {
   guangzhou: -1
 };
 
-function getAPIData(url, data) {
-  osmosis
-  .get(url)
-  .find('#xatzcaqv')
-  .set('data')
-  .data(function(listing) {
-    console.log(listing);
-    return 'done!';
-  })
-  .log(console.log)
-  .error(console.log)
-  .debug(console.log);
+var d2 = {};
+
+function updateAQIData(url, callback) {
+  async.each(Object.keys(data), function(city, callback) {
+    // x(url + city, '#aqiwgtvalue@html')(function(err, aqi) {
+    //   console.log(aqi);
+    //   data[city] = aqi;
+    //
+    //   callback();
+    // });
+    x(url + city, {
+      aqi: '#aqiwgtvalue@html',
+      condition: '#aqiwgtinfo@html'
+    }
+    )(function(err, obj) {
+      data[city] = obj;
+
+      callback();
+    });
+  }, function(err) {
+    callback(err);
+  });
+}
+
+function getAQIData(callback) {
+  // fetch new data every hour
+  if (Date.now() - lastFetch > 3600000) {
+    console.log('new fetch');
+    updateAQIData(site, function(err) {
+      lastFetch = Date.now();
+      callback();
+    });
+  } else {
+    callback();
+  }
 }
 
 /* GET map data. */
-router.get('/data', function (req, res, next) {
-  res.send(getAPIData(url, data));
+router.get('/data', function(req, res, next) {
+  getAQIData(function(err) {
+    if (err) {
+      console.log(err);
+    }
+
+    res.send(data);
+  })
 });
 
 module.exports = router;
