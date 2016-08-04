@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack -p && node ./bin/www",
     "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"sass --watch public/sass/styles.scss:public/styles/styles.css\"",
-    "build": "webpack -p && sass public/sass/styles.scss:public/styles/styles.css"
+    "build": "webpack -p && sass -t compressed public/sass/styles.scss:public/styles/styles.css"
   },
   "dependencies": {
     "async": "^2.0.1",

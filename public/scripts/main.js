@@ -1,3 +1,5 @@
+console.log('yo');
+
 // (function ($) {
 //   $(document).ready(function () {
 //

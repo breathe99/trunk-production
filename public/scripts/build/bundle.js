@@ -47,6 +47,8 @@
   \********************************/
 /***/ function(module, exports) {
 
+	console.log('yo');
+	
 	// (function ($) {
 	//   $(document).ready(function () {
 	//

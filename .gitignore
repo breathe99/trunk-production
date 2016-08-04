@@ -1,5 +1,6 @@
 node_modules/
 node_modules/*
 *.css.map
+*.js.map
 .sass-cache
 npm-debug.log
