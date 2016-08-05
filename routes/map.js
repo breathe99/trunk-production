@@ -19,16 +19,8 @@ var data = {
   guangzhou: -1
 };
 
-var d2 = {};
-
 function updateAQIData(url, callback) {
-  async.each(Object.keys(data), function(city, callback) {
-    // x(url + city, '#aqiwgtvalue@html')(function(err, aqi) {
-    //   console.log(aqi);
-    //   data[city] = aqi;
-    //
-    //   callback();
-    // });
+  async.each(Object.keys(data), function(city, cb) {
     x(url + city, {
       aqi: '#aqiwgtvalue@html',
       condition: '#aqiwgtinfo@html'
@@ -36,7 +28,7 @@ function updateAQIData(url, callback) {
     )(function(err, obj) {
       data[city] = obj;
 
-      callback();
+      cb();
     });
   }, function(err) {
     callback(err);
