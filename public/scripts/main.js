@@ -1,5 +1,13 @@
-console.log('yo');
+var map = require('./map');
 
+var aqiData = null;
+
+map.getAQIData(function(data) {
+  aqiData = data;
+});
+
+// console.log('yo');
+//
 // (function ($) {
 //   $(document).ready(function () {
 //
