@@ -1,7 +1,13 @@
-// module vars
+// module vars, elements
 var cityPoints = [];
 var mapSvg = document.getElementById('pollution-map');
-console.log(mapSvg);
+var card = document.getElementById('map-card');
+var card_title = card.getElementsByClassName('card-title')[0];
+var card_country = card.getElementsByClassName('card-sub')[0];
+var card_flag = card.getElementsByClassName('flag')[0];
+var card_aqi = card.getElementsByClassName('card-aqi')[0];
+var card_condition = card.getElementsByClassName('map__card__footer__text card-current-cond__text')[0];
+var card_aqi_avg = card.querySelector('.card-avg > span.map__card__footer__text');
 
 // Get the latest map data on page load
 function getAQIData (callback) {
@@ -20,70 +26,90 @@ function getAQIData (callback) {
   });
 }
 
-function assignCityPointListeners(ele) {
-  // hover(point) => highlight(li)
+function formatCondition(cond) {
+  var result = cond;
+
+  if (cond.includes('<div')) {
+    result = cond.substring(cond.indexOf('>') + 1, cond.indexOf('<br>'));
+  }
+
+  return result;
+}
+
+function handleClicked(ele, cityPoint) {
+  // update card info
+  card_title.innerHTML = cityPoint.city;
+  card_country.innerHTML = cityPoint.country;
+  // TODO: add flag support
+  // card_flag.innerHTML = cityPoint.country;
+  card_aqi.innerHTML = cityPoint.data.aqi;
+  console.log(cityPoint.data);
+  card_condition.innerHTML = formatCondition(cityPoint.data.condition);
+  // TODO: add aqi avging
+  card_aqi_avg.innerHTML = cityPoint.data.aqi;
+
+  // // switch city point that's 'pulsing'
+  // points[selectedPointInd].classList.remove('pulsing');
+  // points[selectedPointInd].style.r = 2.5;
+  // cityPointTimelines[selectedPointInd].pause();
+  // selectedPointInd = i;
+  // points[selectedPointInd].classList.add('pulsing');
+  // cityPointTimelines[selectedPointInd].play();
+  //
+  // // switch aqi data
+  // aqiValue[0].innerHTML = aqiData[i];
+  // aqiValue[1].innerHTML = aqiData[i];
+}
+
+function assignCityPointListeners(cityPoint) {
+  var ele = cityPoint.element;
+
+  // hover(point) => highlight(point)
   ele.addEventListener('mouseover', function (e) {
+    this.classList.add('mouseover');
     console.log('mouseover');
-    this.classList.add('li-city-hover');
   }, false);
 
   ele.addEventListener('mouseout', function (e) {
-    this.classList.remove('li-city-hover');
+    this.classList.remove('mouseout');
     console.log('mouseout');
   }, false);
 
-  // hover(li) => highlight(point)
-  ele.addEventListener('mouseover', function (e) {
-    this.classList.add('hover');
-  }, false);
-
-  ele.addEventListener('mouseout', function (e) {
-    this.classList.remove('hover');
-  }, false);
-
-  // click(point) => clicked(li, point)
+  // click(point) => clicked(point)
   ele.addEventListener('click', function (e) {
     e.stopPropagation();
-    // handleClicked(i);
+    handleClicked(ele, cityPoint);
   }, false);
-
-  // click(li) => clicked(li, point)
-  ele.addEventListener('click', function (e) {
-    console.log('handling clicked');
-    e.stopPropagation();
-    // handleClicked(i);
-  }, false);
-}
-
-function initCityPoints(resp) {
-  var i;
-  var ele;
-  var cityPoint;
-  var keys = Object.keys(resp);
-
-  for (i = 0; i < keys.length; i++) {
-    console.log(keys[i]);
-    ele = mapSvg.querySelectorAll('[data-city=' + keys[i] + ']')[0];
-    console.log(ele);
-    cityPoint = new CityPoint(keys[i], ele, resp[keys[i]]);
-    console.log(cityPoint);
-    assignCityPointListeners(cityPoint.element);
-    cityPoints.push(cityPoint);
-  }
 }
 
 function toDisplayName(propName) {
   return propName.replace('_',' ').replace(/\b[a-z]/g,function(f){return f.toUpperCase();});
 }
 
-function CityPoint(name, element, data) {
-  this.name = toDisplayName(name);
+function CityPoint(city, country, element, data) {
+  this.city = toDisplayName(city);
+  this.country = toDisplayName(country);
   this.element = element;
-  this.aqi = data.aqi;
-  this.condition = data.condition;
+  this.data = data;
   this.updateData = function(data) {
-    this.condition = data.condition;
-    this.aqi = data.aqi;
+    this.data = data;
+  }
+}
+
+function initCityPoints(resp) {
+  var i;
+  var ele;
+  var cityPoint;
+  var country;
+  var keys = Object.keys(resp);
+
+  for (i = 0; i < keys.length; i++) {
+    ele = mapSvg.querySelectorAll('[data-city=' + keys[i] + ']')[0];
+    country = ele.getAttribute('data-country');
+
+    cityPoint = new CityPoint(keys[i], country, ele, resp[keys[i]]);
+    assignCityPointListeners(cityPoint);
+    cityPoints.push(cityPoint);
   }
 }
 
