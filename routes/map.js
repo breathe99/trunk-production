@@ -7,16 +7,18 @@ var lastFetch = 0;
 
 var site = 'http://aqicn.org/city/';
 var data = {
-  beijing: -1,
-  shanghai: -1,
-  hongkong: -1,
-  bangkok: -1,
-  delhi: -1,
-  mumbai: -1,
-  tokyo: -1,
-  seoul: -1,
+  macao: -1,
   manila: -1,
-  guangzhou: -1
+  bangkok: -1,
+  new_dehli: -1,
+  hanoi: -1,
+  seoul: -1,
+  tokyo: -1,
+  beijing: -1,
+  shangai: -1,
+  mumbai: -1,
+  karachi: -1,
+  pune: -1
 };
 
 function updateAQIData(url, callback) {
