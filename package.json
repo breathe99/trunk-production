@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "webpack -p && node ./bin/www",
-    "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"node-sass --watch --source-map true public/sass/ -o public/styles/\"",
+    "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"node-sass --watch --source-map true public/sass/styles.scss public/styles/styles.css\"",
     "build": "webpack -p && node-sass --output-style compressed  public/sass/ -o public/styles/"
   },
   "dependencies": {
