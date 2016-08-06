@@ -10,14 +10,14 @@ var data = {
   macao: -1,
   manila: -1,
   bangkok: -1,
-  new_dehli: -1,
+  delhi: -1,
   hanoi: -1,
   seoul: -1,
   tokyo: -1,
   beijing: -1,
-  shangai: -1,
+  shanghai: -1,
   mumbai: -1,
-  karachi: -1,
+  // karachi: -1,
   pune: -1
 };
 
@@ -29,6 +29,12 @@ function updateAQIData(url, callback) {
     }
     )(function(err, obj) {
       data[city] = obj;
+
+      // fix for dehli url prop naming
+      if (city === 'delhi') {
+        data.new_delhi = obj;
+        delete data[city];
+      }
 
       cb();
     });

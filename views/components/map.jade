@@ -6,7 +6,7 @@ section.map
     .map__svg
       //- object(type='image/svg+xml', data='/images/map-optimised.svg')#poll_map.
       include ../../public/images/map-optimised.svg
-    .map__card
+    .map__card#map-card
       .map__card__header
         .card-header
           span.card-title.
@@ -23,8 +23,8 @@ section.map
         .card-current-cond
           span.map__card__footer__title.
             CURRENT CONDITION
-          span.card-current-cond__emoji.
-            oo
+          //- span.card-current-cond__emoji.
+          //-   oo
           span.map__card__footer__text.card-current-cond__text.
             Poor
         .card-avg
