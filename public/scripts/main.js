@@ -4,7 +4,13 @@ var aqiData = null;
 
 map.getAQIData(function(data) {
   aqiData = data;
+  console.log(data);
 });
+
+$(document).ready(function () {
+    map.initMapSection();
+});
+
 
 // console.log('yo');
 //
@@ -194,37 +200,37 @@ map.getAQIData(function(data) {
 //     function assignPointCityListeners(i) {
 //       (function (i) {
 //         // hover(point) => highlight(li)
-//         points[i].addEventListener('mouseover', function (e) {
-//           console.log('mouseover');
-//           getCityLI(i).classList.add('li-city-hover');
-//         }, false);
-//
-//         points[i].addEventListener('mouseout', function (e) {
-//           getCityLI(i).classList.remove('li-city-hover');
-//           console.log('mouseout');
-//         }, false);
-//
-//         // hover(li) => highlight(point)
-//         getCityLI(i).addEventListener('mouseover', function (e) {
-//           points[i].classList.add('hover');
-//         }, false);
-//
-//         getCityLI(i).addEventListener('mouseout', function (e) {
-//           points[i].classList.remove('hover');
-//         }, false);
-//
-//         // click(point) => clicked(li, point)
-//         points[i].addEventListener('click', function (e) {
-//           e.stopPropagation();
-//           handleClicked(i);
-//         }, false);
-//
-//         // click(li) => clicked(li, point)
-//         getCityLI(i).addEventListener('click', function (e) {
-//           console.log('handling clicked');
-//           e.stopPropagation();
-//           handleClicked(i);
-//         }, false);
+        // points[i].addEventListener('mouseover', function (e) {
+        //   console.log('mouseover');
+        //   getCityLI(i).classList.add('li-city-hover');
+        // }, false);
+        //
+        // points[i].addEventListener('mouseout', function (e) {
+        //   getCityLI(i).classList.remove('li-city-hover');
+        //   console.log('mouseout');
+        // }, false);
+        //
+        // // hover(li) => highlight(point)
+        // getCityLI(i).addEventListener('mouseover', function (e) {
+        //   points[i].classList.add('hover');
+        // }, false);
+        //
+        // getCityLI(i).addEventListener('mouseout', function (e) {
+        //   points[i].classList.remove('hover');
+        // }, false);
+        //
+        // // click(point) => clicked(li, point)
+        // points[i].addEventListener('click', function (e) {
+        //   e.stopPropagation();
+        //   handleClicked(i);
+        // }, false);
+        //
+        // // click(li) => clicked(li, point)
+        // getCityLI(i).addEventListener('click', function (e) {
+        //   console.log('handling clicked');
+        //   e.stopPropagation();
+        //   handleClicked(i);
+        // }, false);
 //
 //       }(i));
 //     }
