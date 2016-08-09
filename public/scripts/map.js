@@ -1,3 +1,5 @@
+var CityPoint = require('./citypoint');
+
 // module vars, elements
 var cityPoints = [];
 var mapSvg = document.getElementById('pollution-map');
@@ -38,15 +40,15 @@ function formatCondition(cond) {
 
 function handleClicked(ele, cityPoint) {
   // update card info
-  card_title.innerHTML = cityPoint.city;
-  card_country.innerHTML = cityPoint.country;
+  card_title.innerHTML = cityPoint.getCity();
+  card_country.innerHTML = cityPoint.getCountry();
   // TODO: add flag support
   // card_flag.innerHTML = cityPoint.country;
-  card_aqi.innerHTML = cityPoint.data.aqi;
-  console.log(cityPoint.data);
-  card_condition.innerHTML = formatCondition(cityPoint.data.condition);
+  card_aqi.innerHTML = cityPoint.getData().aqi;
+  console.log(cityPoint.getData());
+  card_condition.innerHTML = formatCondition(cityPoint.getData().condition);
   // TODO: add aqi avging
-  card_aqi_avg.innerHTML = cityPoint.data.aqi;
+  card_aqi_avg.innerHTML = cityPoint.getData().aqi;
 
   // // switch city point that's 'pulsing'
   // points[selectedPointInd].classList.remove('pulsing');
@@ -62,7 +64,7 @@ function handleClicked(ele, cityPoint) {
 }
 
 function assignCityPointListeners(cityPoint) {
-  var ele = cityPoint.element;
+  var ele = cityPoint.getElement();
 
   // hover(point) => highlight(point)
   ele.addEventListener('mouseover', function (e) {
@@ -80,20 +82,6 @@ function assignCityPointListeners(cityPoint) {
     e.stopPropagation();
     handleClicked(ele, cityPoint);
   }, false);
-}
-
-function toDisplayName(propName) {
-  return propName.replace('_',' ').replace(/\b[a-z]/g,function(f){return f.toUpperCase();});
-}
-
-function CityPoint(city, country, element, data) {
-  this.city = toDisplayName(city);
-  this.country = toDisplayName(country);
-  this.element = element;
-  this.data = data;
-  this.updateData = function(data) {
-    this.data = data;
-  }
 }
 
 function initCityPoints(resp) {

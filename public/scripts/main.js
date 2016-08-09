@@ -8,7 +8,7 @@ map.getAQIData(function(data) {
 });
 
 $(document).ready(function () {
-    map.initMapSection();
+  map.initMapSection();
 });
 
 
