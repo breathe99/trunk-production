@@ -41,7 +41,8 @@ function formatCondition(cond) {
 }
 
 function formatFlagUrl(country) {
-  return 'url(/images/flags/' + country.replace(' ', '-') + '.png)';
+  return 'url(/images/flags/' +
+  country.replace(' ', '-').toLowerCase() + '.png)';
 }
 
 function handleClicked(ele, cityPoint) {
