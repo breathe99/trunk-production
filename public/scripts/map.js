@@ -40,12 +40,16 @@ function formatCondition(cond) {
   return result;
 }
 
+function formatFlagUrl(country) {
+  return 'url(/images/flags/' + country.replace(' ', '-') + '.png)';
+}
+
 function handleClicked(ele, cityPoint) {
   // update card info
   card_title.innerHTML = cityPoint.getCity();
   card_country.innerHTML = cityPoint.getCountry();
   // TODO: add flag support
-  // card_flag.innerHTML = cityPoint.country;
+  card_flag.style.backgroundImage = formatFlagUrl(cityPoint.getCountry());
   card_aqi.innerHTML = cityPoint.getData().aqi;
   console.log(cityPoint.getData());
   card_condition.innerHTML = formatCondition(cityPoint.getData().condition);
