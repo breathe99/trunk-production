@@ -48,10 +48,8 @@ function handleClicked(ele, cityPoint) {
   // update card info
   card_title.innerHTML = cityPoint.getCity();
   card_country.innerHTML = cityPoint.getCountry();
-  // TODO: add flag support
   card_flag.style.backgroundImage = formatFlagUrl(cityPoint.getCountry());
   card_aqi.innerHTML = cityPoint.getData().aqi;
-  console.log(cityPoint.getData());
   card_condition.innerHTML = formatCondition(cityPoint.getData().condition);
   // TODO: add aqi avging
   card_aqi_avg.innerHTML = cityPoint.getData().aqi;
@@ -63,10 +61,6 @@ function handleClicked(ele, cityPoint) {
   // selectedPointInd = i;
   // points[selectedPointInd].classList.add('pulsing');
   // cityPointTimelines[selectedPointInd].play();
-  //
-  // // switch aqi data
-  // aqiValue[0].innerHTML = aqiData[i];
-  // aqiValue[1].innerHTML = aqiData[i];
 }
 
 function assignCityPointListeners(cityPoint) {
@@ -75,12 +69,12 @@ function assignCityPointListeners(cityPoint) {
   // hover(point) => highlight(point)
   ele.addEventListener('mouseover', function (e) {
     this.classList.add('mouseover');
-    console.log('mouseover');
+    // console.log('mouseover');
   }, false);
 
   ele.addEventListener('mouseout', function (e) {
     this.classList.remove('mouseout');
-    console.log('mouseout');
+    // console.log('mouseout');
   }, false);
 
   // click(point) => clicked(point)
@@ -105,6 +99,9 @@ function initCityPoints(resp) {
     assignCityPointListeners(cityPoint);
     cityPoints.push(cityPoint);
   }
+
+  // init to bangkok
+  handleClicked(null, cityPoints[2]);
 }
 
 // Update card/map with data
