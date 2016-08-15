@@ -1,3 +1,5 @@
+'use strict';
+
 var CityPoint = require('./citypoint');
 
 // module vars, elements

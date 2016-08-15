@@ -1,3 +1,5 @@
+'use strict';
+
 function toDisplayName(propName) {
   return propName.replace('_',' ').replace(/\b[a-z]/g,function(f){return f.toUpperCase();});
 }
@@ -25,8 +27,8 @@ CityPoint.prototype.getData = function() {
   return this._data;
 };
 
-CityPoint.prototype.updateData = function(data) {
-  this.data = data;
+CityPoint.prototype.setData = function(data) {
+  this._data = data;
 };
 
 module.exports = CityPoint;
