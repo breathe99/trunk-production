@@ -15,6 +15,26 @@
   float: right;
   margin-top: -90px;
   margin-right: -80px;
+
+  .city-point {
+    transition: stroke-width 0.3s;
+
+    &:hover {
+      stroke-width: 18px;
+      stroke: rgba(114,128,255,0.38);
+    }
+  }
+
+  .selected-point {
+    fill: #17E546;
+  }
+
+  .point-outline {
+    stroke: #17E546;
+    stroke-width: 1px;
+    fill: none;
+    r: 8px;
+  }
 }
 
 .map__card {

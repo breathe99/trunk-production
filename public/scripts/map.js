@@ -4,14 +4,16 @@ var CityPoint = require('./citypoint');
 
 // module vars, elements
 var cityPoints = [];
+var selectedCityPoint;
 var mapSvg = document.getElementById('pollution-map');
+var cityPointsContainer = document.getElementById('city-points');
 var card = document.getElementById('map-card');
-var card_title = card.getElementsByClassName('card-title')[0];
-var card_country = card.getElementsByClassName('card-sub')[0];
-var card_flag = card.getElementsByClassName('flag')[0];
-var card_aqi = card.getElementsByClassName('card-aqi')[0];
-var card_condition = card.getElementsByClassName('map__card__footer__text card-current-cond__text')[0];
-var card_aqi_avg = card.querySelector('.card-avg > span.map__card__footer__text');
+var cardTitle = card.getElementsByClassName('card-title')[0];
+var cardCountry = card.getElementsByClassName('card-sub')[0];
+var cardFlag = card.getElementsByClassName('flag')[0];
+var cardAqi = card.getElementsByClassName('card-aqi')[0];
+var cardCondition = card.getElementsByClassName('map__card__footer__text card-current-cond__text')[0];
+var CardAqiAvg = card.querySelector('.card-avg > span.map__card__footer__text');
 
 // Get the latest map data on page load
 function getAQIData (callback) {
@@ -45,15 +47,36 @@ function formatFlagUrl(country) {
   country.replace(' ', '-').toLowerCase() + '.png)';
 }
 
-function handleClicked(ele, cityPoint) {
+function handleClicked(cityPoint) {
+  var outline;
+
   // update card info
-  card_title.innerHTML = cityPoint.getCity();
-  card_country.innerHTML = cityPoint.getCountry();
-  card_flag.style.backgroundImage = formatFlagUrl(cityPoint.getCountry());
-  card_aqi.innerHTML = cityPoint.getData().aqi;
-  card_condition.innerHTML = formatCondition(cityPoint.getData().condition);
+  cardTitle.innerHTML = cityPoint.getCity();
+  cardCountry.innerHTML = cityPoint.getCountry();
+  cardFlag.style.backgroundImage = formatFlagUrl(cityPoint.getCountry());
+  cardAqi.innerHTML = cityPoint.getData().aqi;
+  cardCondition.innerHTML = cityPoint.getData().condition ?
+    formatCondition(cityPoint.getData().condition) : '??';
   // TODO: add aqi avging
-  card_aqi_avg.innerHTML = cityPoint.getData().aqi;
+  CardAqiAvg.innerHTML = cityPoint.getData().aqi;
+
+  if (selectedCityPoint) {
+    selectedCityPoint.getElement().classList.add('city-point');
+    selectedCityPoint.getElement().classList.remove('selected-point');
+    $('.point-outline').remove();
+  }
+
+  selectedCityPoint = cityPoint;
+
+  // add outline to DOM
+  outline = selectedCityPoint.getElement().cloneNode();
+  outline.classList.add('point-outline');
+  outline.classList.remove('city-point');
+  cityPointsContainer.appendChild(outline);
+
+  // apply selected point styling
+  selectedCityPoint.getElement().classList.remove('city-point');
+  selectedCityPoint.getElement().classList.add('selected-point');
 
   // // switch city point that's 'pulsing'
   // points[selectedPointInd].classList.remove('pulsing');
@@ -67,21 +90,10 @@ function handleClicked(ele, cityPoint) {
 function assignCityPointListeners(cityPoint) {
   var ele = cityPoint.getElement();
 
-  // hover(point) => highlight(point)
-  ele.addEventListener('mouseover', function (e) {
-    this.classList.add('mouseover');
-    // console.log('mouseover');
-  }, false);
-
-  ele.addEventListener('mouseout', function (e) {
-    this.classList.remove('mouseout');
-    // console.log('mouseout');
-  }, false);
-
   // click(point) => clicked(point)
   ele.addEventListener('click', function (e) {
     e.stopPropagation();
-    handleClicked(ele, cityPoint);
+    handleClicked(cityPoint);
   }, false);
 }
 
@@ -102,7 +114,7 @@ function initCityPoints(resp) {
   }
 
   // init to bangkok
-  handleClicked(null, cityPoints[2]);
+  handleClicked(cityPoints[2]);
 }
 
 // Update card/map with data

@@ -474,6 +474,18 @@ hr {
   float: right;
   margin-top: -90px;
   margin-right: -80px; }
+  .map__svg .city-point {
+    transition: stroke-width 0.3s; }
+    .map__svg .city-point:hover {
+      stroke-width: 18px;
+      stroke: rgba(114, 128, 255, 0.38); }
+  .map__svg .selected-point {
+    fill: #17E546; }
+  .map__svg .point-outline {
+    stroke: #17E546;
+    stroke-width: 1px;
+    fill: none;
+    r: 8px; }
 
 .map__card {
   width: 34.78261%;
