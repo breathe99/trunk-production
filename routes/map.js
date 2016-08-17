@@ -1,6 +1,7 @@
 var express = require('express');
 var async = require('async');
 var Xray = require('x-ray');
+var moment = require('moment');
 var router = express.Router();
 var x = Xray();
 var lastFetch = 0;
@@ -45,7 +46,7 @@ function updateAQIData(url, callback) {
 
 function getAQIData(callback) {
   // fetch new data every hour
-  if (Date.now() - lastFetch > 0) {
+  if (Date.now() - lastFetch > 3600000) {
     console.log('new fetch');
     updateAQIData(site, function(err, aqiData) {
       lastFetch = Date.now();
@@ -59,11 +60,18 @@ function getAQIData(callback) {
 /* GET map data. */
 router.get('/data', function(req, res, next) {
   getAQIData(function(err, aqiData) {
+    var fullRes;
+
     if (err) {
       console.log(err);
     }
 
-    res.send(aqiData);
+    fullRes = {
+      data: aqiData,
+      lastUpdated: 'AQI Data updated ' + moment(lastFetch).fromNow() + ' from <a href="http://aqicn.org">aqicn.org</a>'
+    };
+
+    res.send(fullRes);
   });
 });
 
