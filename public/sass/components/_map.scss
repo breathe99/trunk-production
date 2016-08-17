@@ -61,6 +61,20 @@
   span {
     display: block;
   }
+
+  .last-updated {
+    a {
+      color: $silver;
+    }
+
+    margin-left: -$unit * 2;
+    margin-right: -$unit * 2;
+    margin-top: 30px;
+    margin-bottom: $unit;
+    font-size: .7em;
+    text-align: center;
+    color: $silver;
+  }
 }
 
 .map__card__header {

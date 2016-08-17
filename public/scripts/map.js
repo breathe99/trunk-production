@@ -14,6 +14,7 @@ var cardFlag = card.getElementsByClassName('flag')[0];
 var cardAqi = card.getElementsByClassName('card-aqi')[0];
 var cardCondition = card.getElementsByClassName('map__card__footer__text card-current-cond__text')[0];
 var CardAqiAvg = card.querySelector('.card-avg > span.map__card__footer__text');
+var cardLastUpdated = card.getElementsByClassName('last-updated')[0];
 
 // Get the latest map data on page load
 function getAQIData (callback) {
@@ -120,7 +121,9 @@ function initCityPoints(resp) {
 // Update card/map with data
 function initMapSection() {
   getAQIData(function(aqiData) {
-    initCityPoints(aqiData);
+    // update last-updated text
+    cardLastUpdated.innerHTML = aqiData.lastUpdated;
+    initCityPoints(aqiData.data);
     console.log(cityPoints);
   });
 }

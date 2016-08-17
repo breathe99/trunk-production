@@ -509,6 +509,16 @@ hr {
     width: 100%; }
   .map__card span {
     display: block; }
+  .map__card .last-updated {
+    margin-left: -16px;
+    margin-right: -16px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    font-size: .7em;
+    text-align: center;
+    color: #d8d9df; }
+    .map__card .last-updated a {
+      color: #d8d9df; }
 
 .map__card__header {
   display: flex;
