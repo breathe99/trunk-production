@@ -39,32 +39,32 @@ function updateAQIData(url, callback) {
       cb();
     });
   }, function(err) {
-    callback(err);
+    callback(err, data);
   });
 }
 
 function getAQIData(callback) {
   // fetch new data every hour
-  if (Date.now() - lastFetch > 3600000) {
+  if (Date.now() - lastFetch > 0) {
     console.log('new fetch');
-    updateAQIData(site, function(err) {
+    updateAQIData(site, function(err, aqiData) {
       lastFetch = Date.now();
-      callback();
+      callback(err, aqiData);
     });
   } else {
-    callback();
+    callback(null, data);
   }
 }
 
 /* GET map data. */
 router.get('/data', function(req, res, next) {
-  getAQIData(function(err) {
+  getAQIData(function(err, aqiData) {
     if (err) {
       console.log(err);
     }
 
-    res.send(data);
-  })
+    res.send(aqiData);
+  });
 });
 
 module.exports = router;
