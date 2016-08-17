@@ -71,6 +71,8 @@ function handleClicked(cityPoint) {
 
   // add outline to DOM
   outline = selectedCityPoint.getElement().cloneNode();
+  outline.innerHTML = '<animate attributeName="r" begin="0s" dur="1.24s" repeatCount="indefinite" from="5" to="20"></animate>' +
+  '<animate attributeName="opacity" begin="0s" dur="1.24s" repeatCount="indefinite" from=".75" to="0"></animate>';
   outline.classList.add('point-outline');
   outline.classList.remove('city-point');
   cityPointsContainer.appendChild(outline);
