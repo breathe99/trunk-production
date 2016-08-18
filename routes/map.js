@@ -7,8 +7,24 @@ var x = Xray();
 var db = require('../db');
 var lastFetch = 0;
 var lastUpdatedAvgs = 0;
-
 var site = 'http://aqicn.org/city/';
+
+var numFetches = 0;
+var dailyTotal = {
+  macao: 0,
+  manila: 0,
+  bangkok: 0,
+  delhi: 0,
+  hanoi: 0,
+  seoul: 0,
+  tokyo: 0,
+  beijing: 0,
+  shanghai: 0,
+  mumbai: 0,
+  // karachi: 0,
+  pune: 0
+};
+
 var data = {
   macao: -1,
   manila: -1,
@@ -28,7 +44,7 @@ var avgs = {
   macao: -1,
   manila: -1,
   bangkok: -1,
-  new_delhi: -1,
+  delhi: -1,
   hanoi: -1,
   seoul: -1,
   tokyo: -1,
@@ -82,30 +98,28 @@ function getMonthlyAvgs(callback) {
   }
 }
 
-// function saveDailyAvg(value, city) {
-//   var today = new Date();
-//
-//   if (city === null || value === null) {
-//     console.log('Error saving daily value');
-//     return;
-//   }
-//
-//   var dailyAvg = {
-//     city: city,
-//     value: value,
-//     date: {
-//       month: today.getMonth(),
-//       day: today.getDate()
-//     }
-//   };
-//
-//   db.collection('aqiAvgs').save(dailyAvg, (err, result) => {
-//     if (err) return console.log(err);
-//
-//     console.log('saved to database');
-//     res.redirect('/');
-//   });
-// }
+function saveDailyAvgs(callback) {
+  var today = new Date();
+
+  async.each(Object.keys(dailyTotal), function(city, cb) {
+    var dailyAvg = {
+      city: city,
+      value: dailyTotal[city] / numFetches,
+      date: {
+        month: today.getMonth(),
+        day: today.getDate()
+      }
+    };
+
+    db.get().collection('aqiAvgs').save(dailyAvg, function(err, result) {
+      if (err) console.log(err);
+
+      cb();
+    });
+  }, function(err) {
+    callback(err);
+  });
+}
 
 // --- AQI DATA functionality ---
 function updateAQIData(url, callback) {
@@ -119,17 +133,19 @@ function updateAQIData(url, callback) {
       )(function(err, obj) {
         data[city] = obj;
         data[city].avg = avgs[city];
+        dailyTotal[city] += obj.aqi;
 
-        // fix for dehli url prop naming
-        if (city === 'delhi') {
-          data.new_delhi = obj;
-          data.new_delhi.avg = avgs.new_delhi;
-          delete data[city];
-        }
+        // // fix for dehli url prop naming
+        // if (city === 'delhi') {
+        //   data.new_delhi = obj;
+        //   data.new_delhi.avg = avgs.new_delhi;
+        //   delete data[city];
+        // }
 
         cb();
       });
     }, function(err) {
+      numFetches++;
       callback(err, data);
     });
   });
@@ -158,8 +174,13 @@ router.get('/data', function(req, res, next) {
       console.log(err);
     }
 
+    // clone the object as we want to rename delhi property
+    var fixedData = JSON.parse(JSON.stringify(aqiData));
+    fixedData.new_delhi = aqiData.delhi;
+    delete fixedData.delhi;
+
     fullRes = {
-      data: aqiData,
+      data: fixedData,
       lastUpdated: 'AQI Data updated ' + moment(lastFetch).fromNow() + ' from <a href="http://aqicn.org">aqicn.org</a>'
     };
 
