@@ -4,21 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var db = require('./db');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var map = require('./routes/map');
 
 var app = express();
-
-// db
-var MongoClient = require('mongodb').MongoClient;
-var db;
-
-MongoClient.connect('mongodb://trunk:trunkRoot@ds019482.mlab.com:19482/trunk-production', (err, database) => {
-  if (err) return console.log(err)
-  db = database;
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,13 +29,15 @@ app.use('/map', map);
 
 // Form handling
 app.post('/emails', (req, res) => {
-  db.collection('emails').save(req.body, (err, result) => {
-    if (err) return console.log(err);
+  db.connect(function() {
+    db.get().collection('emails').save(req.body, (err, result) => {
+      if (err) return console.log(err);
 
-    console.log('saved to database');
-    res.redirect('/');
-  })
-})
+      console.log('saved to database');
+      res.redirect('/');
+    });
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -75,6 +69,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
