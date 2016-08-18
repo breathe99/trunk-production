@@ -2,13 +2,6 @@
 
 var map = require('./map');
 
-var aqiData = null;
-
-map.getAQIData(function(data) {
-  aqiData = data;
-  console.log(data);
-});
-
 $(document).ready(function () {
   map.initMapSection();
 });
