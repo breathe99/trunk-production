@@ -58,8 +58,7 @@ function handleClicked(cityPoint) {
   cardAqi.innerHTML = cityPoint.getData().aqi;
   cardCondition.innerHTML = cityPoint.getData().condition ?
     formatCondition(cityPoint.getData().condition) : '??';
-  // TODO: add aqi avging
-  CardAqiAvg.innerHTML = cityPoint.getData().aqi;
+  CardAqiAvg.innerHTML = cityPoint.getData().avg;
 
   if (selectedCityPoint) {
     selectedCityPoint.getElement().classList.add('city-point');

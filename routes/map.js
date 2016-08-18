@@ -28,7 +28,7 @@ var avgs = {
   macao: -1,
   manila: -1,
   bangkok: -1,
-  delhi: -1,
+  new_delhi: -1,
   hanoi: -1,
   seoul: -1,
   tokyo: -1,
@@ -64,12 +64,6 @@ function updateMonthlyAvgs(callback) {
     getMonthlyAvg(city, function(avg) {
       console.log(city + ': ' + avg);
       avgs[city] = avg;
-
-      // fix for dehli url prop naming
-      if (city === 'delhi') {
-        avgs.new_delhi = avg;
-        delete data[city];
-      }
 
       cb();
     });
@@ -129,6 +123,7 @@ function updateAQIData(url, callback) {
         // fix for dehli url prop naming
         if (city === 'delhi') {
           data.new_delhi = obj;
+          data.new_delhi.avg = avgs.new_delhi;
           delete data[city];
         }
 
