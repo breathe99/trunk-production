@@ -3,18 +3,21 @@ footer {
 
   padding-top: 57px;
   padding-bottom: 10 * $unit;
+  padding-right: 20px;
+  padding-left: 20px;
   height: 30 * $unit;
   color: #fff;
+  background-color: #000d80;
 
-  &:after {
-    content: " ";
-    background-color: #000d80;
-    display: block;
-    width: 100vw;
-    height: 240px;
-    margin-top: -57px;
-    margin-left: -14.45vw;
-  }
+  // &:after {
+  //   content: " ";
+  //
+  //   display: block;
+  //   width: 100vw;
+  //   height: 240px;
+  //   margin-top: -57px;
+  //   margin-left: -14.45vw;
+  // }
 }
 
 .footer__logo {
@@ -38,9 +41,15 @@ footer {
 .footer__links {
   @include span(last 4 of 12);
 
+  @include mobile_tablet {
+    width: auto;
+  }
   .footer__link {
     @include span(1 of 4);
 
+    @include mobile_tablet {
+      width: auto;
+    }
     .footer__link__header {
       font-size: 16px;
       line-height: 1.6;

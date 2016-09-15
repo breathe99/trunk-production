@@ -11,7 +11,9 @@
     @include span(first 2);
     // flex: 1;
     // align-self: flex-start;
-
+     @include mobile_tablet {
+       width: auto;
+     }
     #logo {
       height: 44px;
       width: 130px;
@@ -25,6 +27,9 @@
     // align-self: flex-end;
     line-height: 6 * $unit;
 
+    @include mobile_tablet {
+      width: auto;
+    }
     & > ul {
       display: flex;
       justify-content: space-between;

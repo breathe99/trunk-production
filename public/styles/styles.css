@@ -382,6 +382,10 @@ hr {
 
 .hero {
   padding-top: 48px; }
+  @media only screen and (max-width: 992px) {
+    .hero {
+      padding-right: 20px;
+      padding-left: 20px; } }
 
 .hero__content {
   text-align: center;
@@ -416,6 +420,9 @@ hr {
     width: 13.04348%;
     float: left;
     margin-right: 4.34783%; }
+    @media only screen and (max-width: 992px) {
+      .navbar .navbar__logo {
+        width: auto; } }
     .navbar .navbar__logo #logo {
       height: 44px;
       width: 130px;
@@ -426,6 +433,9 @@ hr {
     float: right;
     margin-right: 0;
     line-height: 48px; }
+    @media only screen and (max-width: 992px) {
+      .navbar .navbar__links {
+        width: auto; } }
     .navbar .navbar__links > ul {
       display: flex;
       justify-content: space-between;
@@ -745,16 +755,11 @@ footer {
   float: left;
   padding-top: 57px;
   padding-bottom: 80px;
+  padding-right: 20px;
+  padding-left: 20px;
   height: 240px;
-  color: #fff; }
-  footer:after {
-    content: " ";
-    background-color: #000d80;
-    display: block;
-    width: 100vw;
-    height: 240px;
-    margin-top: -57px;
-    margin-left: -14.45vw; }
+  color: #fff;
+  background-color: #000d80; }
 
 .footer__logo {
   width: 21.73913%;
@@ -775,10 +780,16 @@ footer {
   width: 30.43478%;
   float: right;
   margin-right: 0; }
+  @media only screen and (max-width: 992px) {
+    .footer__links {
+      width: auto; } }
   .footer__links .footer__link {
     width: 14.28571%;
     float: left;
     margin-right: 14.28571%; }
+    @media only screen and (max-width: 992px) {
+      .footer__links .footer__link {
+        width: auto; } }
     .footer__links .footer__link .footer__link__header {
       font-size: 16px;
       line-height: 1.6;
