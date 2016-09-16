@@ -434,18 +434,26 @@ hr {
       .navbar .navbar__links .nav-link:hover {
         color: #aaa; }
 
+.about__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
 .about__model {
-  width: 56.52174%;
-  float: left;
-  margin-right: 4.34783%; }
+  flex-basis: 60%; }
+  @media only screen and (max-width: 992px) {
+    .about__model {
+      flex-basis: 100%; } }
   .about__model img {
     display: block;
     margin: 150px auto; }
 
 .about__features {
-  width: 39.13043%;
-  float: right;
-  margin-right: 0; }
+  flex-basis: 40%; }
+  @media only screen and (max-width: 992px) {
+    .about__features {
+      flex-basis: 100%;
+      padding: 0 20px; } }
   .about__features .about__feature {
     margin-bottom: 40px; }
 
