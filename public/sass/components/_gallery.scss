@@ -5,8 +5,8 @@
 }
 
 .gallery__photos {
-  max-width: $contentWidth;
-  
+  @include contentContainer;
+
   .gallery__photo {
     float: left;
     width: 50%;

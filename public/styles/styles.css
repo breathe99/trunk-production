@@ -318,21 +318,11 @@ h3 {
 
 body {
   font-family: ProximaNova-Regular;
-  text-size: 16px;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto; }
-  body:after {
-    content: " ";
-    display: block;
-    clear: both; }
+  text-size: 16px; }
 
 section {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
+  max-width: 840px;
+  margin: auto;
   padding-top: 72px;
   padding-bottom: 72px; }
 
@@ -597,7 +587,8 @@ hr {
   flex-direction: column; }
 
 .gallery__photos {
-  max-width: 840px; }
+  max-width: 840px;
+  margin: auto; }
   .gallery__photos .gallery__photo {
     float: left;
     width: 50%;
@@ -628,10 +619,6 @@ hr {
   display: inline-block; }
 
 .preorder__card {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
   font-family: "Proxima Nova";
   height: 582px;
   border-radius: 6px;
@@ -720,22 +707,13 @@ hr {
     margin-right: 32px; }
 
 .initiative {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
   text-align: center; }
 
 .initiative__btn {
-  margin-left: 34.78261%;
-  width: 30.43478%;
-  float: left;
-  margin-right: 4.34783%;
   margin-bottom: 64px; }
 
 footer {
   width: 100%;
-  float: left;
   padding-top: 57px;
   padding-bottom: 80px;
   padding-right: 20px;
@@ -743,6 +721,10 @@ footer {
   height: 240px;
   color: #fff;
   background-color: #000d80; }
+
+.footer__content {
+  max-width: 840px;
+  margin: auto; }
 
 .footer__logo {
   width: 21.73913%;

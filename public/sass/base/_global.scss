@@ -9,11 +9,10 @@
 body {
   font-family: ProximaNova-Regular; // TODO fix typography
   text-size: 16px;
-  @include container(1024px);
 }
 
 section {
-  @include full;
+  @include contentContainer;
   padding-top: 9 * $unit;
   padding-bottom: 9 * $unit;
 }

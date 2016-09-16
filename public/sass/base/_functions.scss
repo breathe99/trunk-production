@@ -15,3 +15,8 @@
   @warn "Unknown `#{$key}` in $fonts.";
   @return null;
 }
+
+@mixin contentContainer {
+  max-width: $contentWidth;
+  margin: auto;
+}

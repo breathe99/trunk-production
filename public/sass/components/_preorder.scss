@@ -3,7 +3,6 @@
 }
 
 .preorder__card {
-  @include span(12);
   font-family: "Proxima Nova"; // TODO: remove?
   height: 582px;
   border-radius: 6px;
