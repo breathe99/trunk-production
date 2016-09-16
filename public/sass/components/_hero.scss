@@ -16,17 +16,13 @@
 
   .hero__desc {
     margin-top: 34 * $unit;
-    @include full;
 
     .hero__desc__statement {
-      @include pre(3);
-      @include span(6 of 12);
-      @include break();
+      max-width: 490px;
+      margin: auto;
     }
 
     .hero__btn {
-      @include pre(4);
-      @include span(4 of 12);
       margin-top: 4 * $unit;
     }
   }

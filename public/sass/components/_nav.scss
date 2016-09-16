@@ -1,16 +1,11 @@
-// nav {
-//   margin: 0;
-//   overflow: hidden;
-// }
-
 .navbar {
-  @include full;
-  // display: flex;
-  // align-items: center;
+  display: flex;
+  align-items: center;
+  
   .navbar__logo {
-    @include span(first 2);
-    // flex: 1;
-    // align-self: flex-start;
+    flex-basis: 50%;
+    flex: 1;
+    align-self: flex-start;
      @include mobile_tablet {
        width: auto;
      }
@@ -23,8 +18,7 @@
   }
 
   .navbar__links {
-    @include span(last 4);
-    // align-self: flex-end;
+    align-self: flex-end;
     line-height: 6 * $unit;
 
     @include mobile_tablet {

@@ -391,35 +391,20 @@ hr {
   text-align: center;
   padding-top: 72px; }
   .hero__content .hero__desc {
-    margin-top: 272px;
-    clear: both;
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0; }
+    margin-top: 272px; }
     .hero__content .hero__desc .hero__desc__statement {
-      margin-left: 26.08696%;
-      width: 47.82609%;
-      float: left;
-      margin-right: 4.34783%;
-      clear: both; }
+      max-width: 490px;
+      margin: auto; }
     .hero__content .hero__desc .hero__btn {
-      margin-left: 34.78261%;
-      width: 30.43478%;
-      float: left;
-      margin-right: 4.34783%;
       margin-top: 32px; }
 
 .navbar {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
+  display: flex;
+  align-items: center; }
   .navbar .navbar__logo {
-    width: 13.04348%;
-    float: left;
-    margin-right: 4.34783%; }
+    flex-basis: 50%;
+    flex: 1;
+    align-self: flex-start; }
     @media only screen and (max-width: 992px) {
       .navbar .navbar__logo {
         width: auto; } }
@@ -429,9 +414,7 @@ hr {
       pointer-events: none;
       margin-bottom: -35px; }
   .navbar .navbar__links {
-    width: 30.43478%;
-    float: right;
-    margin-right: 0;
+    align-self: flex-end;
     line-height: 48px; }
     @media only screen and (max-width: 992px) {
       .navbar .navbar__links {
