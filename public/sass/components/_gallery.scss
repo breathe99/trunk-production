@@ -1,10 +1,12 @@
 .gallery {
-  @include span(12);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery__photos {
-  @include container(840px);
-
+  max-width: $contentWidth;
+  
   .gallery__photo {
     float: left;
     width: 50%;
@@ -29,7 +31,6 @@
     }
 
     @include mobile_tablet {
-      width: 100%;
       float: none;
       margin: auto;
       text-align: center;
