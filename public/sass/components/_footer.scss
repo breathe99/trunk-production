@@ -7,17 +7,39 @@ footer {
   height: 30 * $unit;
   color: #fff;
   background-color: #000d80;
+
+  @include mobile_tablet {
+    padding: 20px;
+  }
 }
 
 .footer__content {
   @include contentContainer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include mobile_tablet {
+    flex-direction: column;
+  }
 }
 .footer__logo {
-  @include span(3);
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
 
+  @include mobile_tablet {
+    flex-basis: 100%;
+    justify-content: center;
+    text-align: center;
+  }
   img {
     width: 136px;
     height: 46px;
+
+    @include mobile_tablet {
+      margin: auto;
+    }
   }
 
   .footer__info {
@@ -31,17 +53,21 @@ footer {
 }
 
 .footer__links {
-  @include span(last 4 of 12);
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+  @include mobile_tablet {
+    flex-basis: 100%;
+    justify-content: center;
+  }
 
   @include mobile_tablet {
     width: auto;
   }
   .footer__link {
-    @include span(1 of 4);
+    flex-basis: 25%;
 
-    @include mobile_tablet {
-      width: auto;
-    }
     .footer__link__header {
       font-size: 16px;
       line-height: 1.6;

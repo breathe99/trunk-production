@@ -19,4 +19,5 @@
 @mixin contentContainer {
   max-width: $contentWidth;
   margin: auto;
+  width: 100%;
 }

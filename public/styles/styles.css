@@ -323,6 +323,7 @@ body {
 section {
   max-width: 840px;
   margin: auto;
+  width: 100%;
   padding-top: 72px;
   padding-bottom: 72px; }
 
@@ -588,7 +589,8 @@ hr {
 
 .gallery__photos {
   max-width: 840px;
-  margin: auto; }
+  margin: auto;
+  width: 100%; }
   .gallery__photos .gallery__photo {
     float: left;
     width: 50%;
@@ -721,18 +723,36 @@ footer {
   height: 240px;
   color: #fff;
   background-color: #000d80; }
+  @media only screen and (max-width: 992px) {
+    footer {
+      padding: 20px; } }
 
 .footer__content {
   max-width: 840px;
-  margin: auto; }
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 992px) {
+    .footer__content {
+      flex-direction: column; } }
 
 .footer__logo {
-  width: 21.73913%;
-  float: left;
-  margin-right: 4.34783%; }
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (max-width: 992px) {
+    .footer__logo {
+      flex-basis: 100%;
+      justify-content: center;
+      text-align: center; } }
   .footer__logo img {
     width: 136px;
     height: 46px; }
+    @media only screen and (max-width: 992px) {
+      .footer__logo img {
+        margin: auto; } }
   .footer__logo .footer__info {
     margin-top: 8px;
     margin-bottom: 11.2px;
@@ -742,19 +762,18 @@ footer {
     text-decoration: none; }
 
 .footer__links {
-  width: 30.43478%;
-  float: right;
-  margin-right: 0; }
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end; }
+  @media only screen and (max-width: 992px) {
+    .footer__links {
+      flex-basis: 100%;
+      justify-content: center; } }
   @media only screen and (max-width: 992px) {
     .footer__links {
       width: auto; } }
   .footer__links .footer__link {
-    width: 14.28571%;
-    float: left;
-    margin-right: 14.28571%; }
-    @media only screen and (max-width: 992px) {
-      .footer__links .footer__link {
-        width: auto; } }
+    flex-basis: 25%; }
     .footer__links .footer__link .footer__link__header {
       font-size: 16px;
       line-height: 1.6;
