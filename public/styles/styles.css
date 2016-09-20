@@ -467,7 +467,8 @@ hr {
   margin-top: -90px;
   margin-right: -80px; }
   .map__svg .city-point {
-    transition: stroke-width 0.3s; }
+    transition: stroke-width 0.3s;
+    cursor: pointer; }
     .map__svg .city-point:hover {
       stroke-width: 18px;
       stroke: rgba(114, 128, 255, 0.38); }

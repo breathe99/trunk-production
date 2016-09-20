@@ -18,6 +18,7 @@
 
   .city-point {
     transition: stroke-width 0.3s;
+    cursor: pointer;
 
     &:hover {
       stroke-width: 18px;
