@@ -60,6 +60,7 @@ footer {
   @include mobile_tablet {
     flex-basis: 100%;
     justify-content: center;
+    text-align: center;
   }
 
   @include mobile_tablet {

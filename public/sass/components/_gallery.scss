@@ -7,6 +7,10 @@
 .gallery__photos {
   @include contentContainer;
 
+  @include mobile_tablet {
+    text-align: center;
+  }
+  
   .gallery__photo {
     float: left;
     width: 50%;
