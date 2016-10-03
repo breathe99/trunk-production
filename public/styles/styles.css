@@ -422,7 +422,7 @@ hr {
     .navbar .navbar__links .navbar__mobile {
       display: none;
       width: 300px;
-      position: absolute;
+      position: fixed;
       height: 100%;
       padding-top: 48px;
       top: 0;
