@@ -4,7 +4,8 @@ section.hero
       a
         img#logo(src='../images/logo@2x.png')
     .navbar__links
-      ul
+      i.fa.fa-bars.ham
+      ul.navbar__desktop
         li
           a.nav-link.body(href='#trunk').
             TRUNK
@@ -14,6 +15,18 @@ section.hero
         li
           a.nav-link.body(href='#connect').
             CONNECT
+      .navbar__mobile
+        i.fa.fa-times.close
+        ul
+          li
+            a.nav-link.body(href='#trunk').
+              TRUNK
+          li
+            a.nav-link.body(href='#initiative').
+              INITIATIVE
+          li
+            a.nav-link.body(href='#connect').
+              CONNECT
   .hero__content
     .hero__title
       h2.

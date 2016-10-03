@@ -416,6 +416,43 @@ hr {
       justify-content: space-between;
       margin: 0;
       padding: 0; }
+    @media only screen and (max-width: 992px) {
+      .navbar .navbar__links .navbar__desktop {
+        display: none; } }
+    .navbar .navbar__links .navbar__mobile {
+      display: none;
+      width: 300px;
+      position: absolute;
+      height: 100%;
+      padding-top: 48px;
+      top: 0;
+      right: -300px;
+      transition: all .25s ease-in-out;
+      background-color: #000d80; }
+      @media only screen and (max-width: 992px) {
+        .navbar .navbar__links .navbar__mobile {
+          display: block; } }
+      .navbar .navbar__links .navbar__mobile.open {
+        right: 0; }
+      .navbar .navbar__links .navbar__mobile .close {
+        color: #17e546;
+        font-size: 20px;
+        width: 25px;
+        margin: auto; }
+      .navbar .navbar__links .navbar__mobile ul {
+        text-align: center;
+        padding: 0; }
+      .navbar .navbar__links .navbar__mobile li {
+        display: block; }
+    .navbar .navbar__links i {
+      display: none;
+      margin-top: 15px;
+      cursor: pointer; }
+      @media only screen and (max-width: 992px) {
+        .navbar .navbar__links i {
+          display: flex;
+          color: #000d80;
+          font-size: 20px; } }
     .navbar .navbar__links li {
       display: inline-block;
       list-style-type: none; }

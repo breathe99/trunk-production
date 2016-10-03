@@ -4,6 +4,14 @@ var map = require('./map');
 
 $(document).ready(function () {
   map.initMapSection();
+
+  // Mobile menu
+  $('.ham').click(function() {
+    $('.navbar__mobile').toggleClass('open');
+  });
+  $('.close').click(function() {
+    $('.navbar__mobile').toggleClass('open');
+  });
 });
 
 
