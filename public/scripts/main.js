@@ -6,11 +6,15 @@ $(document).ready(function () {
   map.initMapSection();
 
   // Mobile menu
-  $('.ham').click(function() {
-    $('.navbar__mobile').toggleClass('open');
+  var mobile = $('.navbar__mobile');
+  var hamburger = $('.ham');
+  var close = $('.close');
+
+  hamburger.click(function() {
+    mobile.toggleClass('open');
   });
-  $('.close').click(function() {
-    $('.navbar__mobile').toggleClass('open');
+  close.click(function() {
+    mobile.toggleClass('open');
   });
 });
 
