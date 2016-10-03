@@ -317,7 +317,7 @@ h3 {
   box-sizing: border-box; }
 
 body {
-  font-family: ProximaNova-Regular;
+  font-family: 'Proxima Nova';
   text-size: 16px; }
 
 section {
@@ -357,6 +357,7 @@ hr {
   color: white;
   display: inline-block;
   padding: 18px 31px;
+  font-family: 'Proxima Nova';
   text-decoration: none;
   width: auto;
   letter-spacing: 1px;
