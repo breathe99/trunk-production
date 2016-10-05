@@ -474,10 +474,14 @@ hr {
   flex-basis: 60%; }
   @media only screen and (max-width: 992px) {
     .about__model {
-      flex-basis: 100%; } }
+      flex-basis: auto; } }
   .about__model img {
     display: block;
     margin: 150px auto; }
+    @media only screen and (max-width: 992px) {
+      .about__model img {
+        width: 100%;
+        margin: 50px auto; } }
 
 .about__features {
   flex-basis: 40%; }

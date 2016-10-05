@@ -11,11 +11,16 @@
   flex-basis: 60%;
 
   @include mobile_tablet {
-    flex-basis: 100%;
+    flex-basis: auto;
   }
   img {
     display: block;
     margin: 150px auto;
+
+    @include mobile_tablet {
+      width: 100%;
+      margin: 50px auto;
+    }
   }
 }
 
