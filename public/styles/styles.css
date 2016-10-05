@@ -421,12 +421,12 @@ hr {
         display: none; } }
     .navbar .navbar__links .navbar__mobile {
       display: none;
-      width: 300px;
+      width: 200px;
       position: fixed;
       height: 100%;
       padding-top: 48px;
       top: 0;
-      right: -300px;
+      right: -200px;
       transition: all .25s ease-in-out;
       background-color: #000d80; }
       @media only screen and (max-width: 992px) {
@@ -437,13 +437,15 @@ hr {
       .navbar .navbar__links .navbar__mobile .close {
         color: #17e546;
         font-size: 20px;
-        width: 25px;
-        margin: auto; }
+        width: 20px;
+        margin: 15px auto; }
       .navbar .navbar__links .navbar__mobile ul {
         text-align: center;
         padding: 0; }
       .navbar .navbar__links .navbar__mobile li {
         display: block; }
+        .navbar .navbar__links .navbar__mobile li a {
+          color: white; }
     .navbar .navbar__links i {
       display: none;
       margin-top: 15px;

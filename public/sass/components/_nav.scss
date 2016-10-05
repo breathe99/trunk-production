@@ -37,12 +37,12 @@
     }
     .navbar__mobile {
       display: none;
-      width: 300px;
+      width: 200px;
       position: fixed;
       height: 100%;
       padding-top: 48px;
       top: 0;
-      right: -300px;
+      right: -200px;
       transition: all .25s ease-in-out;
       background-color: $olFactoryBlue;
 
@@ -56,8 +56,8 @@
       .close {
         color: $tealish-green;
         font-size: 20px;
-        width: 25px;
-        margin: auto;
+        width: 20px;
+        margin: 15px auto;
       }
       ul {
         text-align: center;
@@ -65,6 +65,10 @@
       }
       li {
         display: block;
+
+        a {
+          color: white;
+        }
       }
     }
     i {
