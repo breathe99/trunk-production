@@ -546,7 +546,8 @@ hr {
     .map__card {
       width: auto;
       margin: auto;
-      float: none; } }
+      float: none;
+      clear: both; } }
   .map__card hr {
     border: solid 1px #f2f4ff;
     margin: 0;
