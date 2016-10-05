@@ -7,7 +7,15 @@
 
   .map__desc {
     margin-top: -128px;
-    @include span(7);
+    max-width: 450px;
+    float: left;
+
+    @include mobile_tablet {
+      width: 100%;
+      float: none;
+      padding: 20px;
+      margin: auto;
+    }
   }
 }
 
@@ -16,6 +24,9 @@
   margin-top: -90px;
   margin-right: -80px;
 
+  @include mobile_tablet {
+    margin: auto;
+  }
   .city-point {
     transition: stroke-width 0.3s;
     cursor: pointer;
@@ -51,6 +62,11 @@
   box-shadow: 0 1px 4px 0 rgba(148, 148, 148, 0.5);
   color: $cool-grey;
 
+  @include mobile_tablet {
+    width: auto;
+    margin: auto;
+    float: none;
+  }
   hr {
     	border: solid 1px $very-light-blue;
       margin: 0;

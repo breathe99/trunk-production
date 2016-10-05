@@ -498,14 +498,22 @@ hr {
     clear: both; }
   .map__map .map__desc {
     margin-top: -128px;
-    width: 56.52174%;
-    float: left;
-    margin-right: 4.34783%; }
+    max-width: 450px;
+    float: left; }
+    @media only screen and (max-width: 992px) {
+      .map__map .map__desc {
+        width: 100%;
+        float: none;
+        padding: 20px;
+        margin: auto; } }
 
 .map__svg {
   float: right;
   margin-top: -90px;
   margin-right: -80px; }
+  @media only screen and (max-width: 992px) {
+    .map__svg {
+      margin: auto; } }
   .map__svg .city-point {
     transition: stroke-width 0.3s;
     cursor: pointer; }
@@ -534,6 +542,11 @@ hr {
   background-color: #ffffff;
   box-shadow: 0 1px 4px 0 rgba(148, 148, 148, 0.5);
   color: #9395a1; }
+  @media only screen and (max-width: 992px) {
+    .map__card {
+      width: auto;
+      margin: auto;
+      float: none; } }
   .map__card hr {
     border: solid 1px #f2f4ff;
     margin: 0;
