@@ -58,7 +58,7 @@ function handleClicked(cityPoint) {
   cardAqi.innerHTML = cityPoint.getData().aqi;
   cardCondition.innerHTML = cityPoint.getData().condition ?
     formatCondition(cityPoint.getData().condition) : '??';
-  CardAqiAvg.innerHTML = cityPoint.getData().avg;
+  CardAqiAvg.innerHTML = cityPoint.getData().avg || 'N/A';
 
   if (selectedCityPoint) {
     selectedCityPoint.getElement().classList.add('city-point');
