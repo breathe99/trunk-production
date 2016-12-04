@@ -51,7 +51,7 @@
 
 .map__card {
   @include span(4 wide);
-  font-family: "Proxima Nova"; // TODO: remove?
+  font-family: $sans-serif;
   margin-top: -440px;
   float: left;
   max-width: 275px;
