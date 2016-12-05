@@ -1,22 +1,18 @@
-.about {
-
-}
-
 .about__info {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
+
 .about__model {
   flex-basis: 60%;
 
   @include mobile_tablet {
     flex-basis: auto;
   }
+
   img {
     display: block;
     margin: 150px auto;
-
+    margin-left: -54px;
     @include mobile_tablet {
       width: 100%;
       margin: 50px auto;
@@ -26,12 +22,49 @@
 
 .about__features {
   flex-basis: 40%;
+  // margin-left: 72px;
 
   @include mobile_tablet {
     flex-basis: 100%;
     padding: 0 20px;
   }
-  .about__feature {
-    margin-bottom: 5 * $unit;
+}
+
+.about__feature {
+  margin-bottom: 5 * $unit;
+
+  h3 {
+    margin: 1em 0 .5em -38px;
+
+    &::before {
+      display: inline-block;
+      height: 36px;
+      width: 36px;
+      position: relative;
+      top: 10px;
+      right: 16px;
+    }
   }
+
+  svg {
+    height: 36px;
+    width: 36px;
+
+  }
+}
+
+.about__feature--fit::before {
+  content: url('../images/icons/fit.svg');
+}
+
+.about__feature--reusable::before {
+  content: url('../images/icons/reusable.svg');
+}
+
+.about__feature--seal::before {
+  content: url('../images/icons/seal.svg');
+}
+
+.about__feature--customization::before {
+  content: url('../images/icons/customization.svg');
 }
