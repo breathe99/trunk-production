@@ -1,19 +1,20 @@
 .btn {
   border-radius: 40px;
   background-color: $tealish-green;
+  letter-spacing: 0.2px;
   color: white;
   display: inline-block;
-  padding: 18px 31px;
-  font-family: $sans-serif;
-  text-decoration: none;
-  width: auto;
-  letter-spacing: 1px;
+  padding: 16px 31px;
+  user-select: none;
   font-size: 1.125em;
-  font-weight: 400;
-  transition: transform 0.3s;
+  line-height: 1.4;
+  font-weight: 600;
+  transition: all 0.2s linear;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
 
   &:hover {
-    transform: scale(0.95);
+    background-color: lighten($tealish-green, 5);
+    box-shadow: 0 4px 8px rgba(0,0,0,.12);
   }
 }
 
