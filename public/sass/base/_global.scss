@@ -9,6 +9,9 @@
 body {
   font-family: $sans-serif;
   font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 section {
@@ -18,27 +21,25 @@ section {
 }
 
 hr {
-  @include pre(1);
-  @include span(10);
-  border-color: $very-light-blue;
-  border-style: solid;
-  border-width: .5px;
+  display: none; // TODO actually remove hr eles
+  background: $very-light-blue;
+  opacity: 0.15;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .section__header {
   text-align: center;
+}
 
-  .section__title {
-    display: block;
-    margin-bottom: 7 * $unit;
-  }
+.section__title {
+  display: block;
+  margin-bottom: 7 * $unit;
+}
 
-  .section__desc {
-    @include pre(3);
-    @include span(6 of 12);
-    display: block;
-    margin-bottom: 8 * $unit;
-  }
+.section__desc {
+  @include pre(3);
+  @include span(6 of 12);
+  display: block;
+  margin-bottom: 8 * $unit;
 }
