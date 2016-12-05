@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "webpack -p && node ./bin/www",
-    "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"node-sass --watch --source-map true public/sass/styles.scss public/styles/styles.css\"",
-    "build": "webpack -p && node-sass --output-style compressed public/sass/ -o public/styles/"
+    "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"node-sass --watch --source-map true public/sass/styles.scss public/styles/styles.css\" \"postcss -u autoprefixer -r public/styles/styles.css\"",
+    "build": "webpack -p && node-sass --output-style compressed public/sass/ -o public/styles/ && postcss -u autoprefixer -r public/styles/styles.css"
   },
   "dependencies": {
     "async": "^2.0.1",
@@ -24,9 +24,11 @@
     "x-ray": "^2.3.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
     "concurrently": "^2.2.0",
     "node-sass": "^3.8.0",
     "nodemon": "^1.9.2",
+    "postcss-cli": "^2.6.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
