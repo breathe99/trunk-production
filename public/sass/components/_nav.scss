@@ -1,100 +1,109 @@
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+}
 
-  .navbar__logo {
-    flex-basis: 50%;
-    flex: 1;
-    align-self: flex-start;
-     @include mobile_tablet {
-       width: auto;
-     }
-    #logo {
-      height: 44px;
-      width: 130px;
-      pointer-events: none;
-      margin-bottom: -35px;
+.navbar__desktop {
+  @include mobile_tablet {
+    display: none;
+  }
+}
+
+.navbar__mobile {
+  display: none;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  padding-top: 48px;
+  top: 0;
+  right: -200px;
+  transition: all 0.25s ease-in-out;
+  background-color: $olFactoryBlue;
+  @include mobile_tablet {
+    display: block;
+  }
+
+  &.open {
+    right: 0;
+  }
+
+  .close {
+    color: $tealish-green;
+    font-size: 20px;
+    width: 20px;
+    margin: 15px auto;
+  }
+
+  ul {
+    text-align: center;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+.navbar__logo {
+  margin-bottom: -2 * $unit;
+  @include mobile_tablet {
+    width: auto;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
+
+#logo {
+  height: 44px;
+  width: 130px;
+  pointer-events: none;
+}
+
+.navbar__links {
+  @include mobile_tablet {
+    width: auto;
+  }
+
+  & > ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  i {
+    display: none;
+    margin-top: 15px;
+    cursor: pointer;
+    @include mobile_tablet {
+      display: flex;
+      color: $olFactoryBlue;
+      font-size: 20px;
     }
   }
 
-  .navbar__links {
-    align-self: flex-end;
-    line-height: 6 * $unit;
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
+}
 
-    @include mobile_tablet {
-      width: auto;
-    }
-    & > ul {
-      display: flex;
-      justify-content: space-between;
-      margin: 0;
-      padding: 0;
-    }
-    .navbar__desktop {
-      @include mobile_tablet {
-        display: none;
-      }
-    }
-    .navbar__mobile {
-      display: none;
-      width: 200px;
-      position: fixed;
-      height: 100%;
-      padding-top: 48px;
-      top: 0;
-      right: -200px;
-      transition: all .25s ease-in-out;
-      background-color: $olFactoryBlue;
+.nav-link {
+  display: block;
+  margin: 0 1em;
+  transition: all 0.2s linear;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+  text-decoration: none;
 
-      @include mobile_tablet {
-        display: block;
-      }
-
-      &.open {
-        right: 0;
-      }
-      .close {
-        color: $tealish-green;
-        font-size: 20px;
-        width: 20px;
-        margin: 15px auto;
-      }
-      ul {
-        text-align: center;
-        padding: 0;
-      }
-      li {
-        display: block;
-
-        a {
-          color: white;
-        }
-      }
-    }
-    i {
-      display: none;
-      margin-top: 15px;
-      cursor: pointer;
-
-      @include mobile_tablet {
-        display: flex;
-        color: $olFactoryBlue;
-        font-size: 20px;
-      }
-    }
-    li {
-      display: inline-block;
-      list-style-type: none;
-    }
-
-    .nav-link {
-      display: block;
-      padding: 0.5em 0.5em;
-      text-decoration: none;
-
-      &:hover {
-        color: #aaa;
-      }
-    }
+  &:hover {
+    color: darken($cool-grey, 20);
   }
 }

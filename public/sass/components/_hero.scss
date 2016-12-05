@@ -1,6 +1,5 @@
 .hero {
   padding-top: 6 * $unit;
-
   @include mobile_tablet {
     padding-right: 20px;
     padding-left: 20px;
@@ -10,21 +9,17 @@
 .hero__content {
   text-align: center;
   padding-top: 9 * $unit;
+}
 
-  .hero__title {
-  }
+.hero__desc {
+  margin-top: 34 * $unit;
+}
 
-  .hero__desc {
-    margin-top: 34 * $unit;
+.hero__desc__statement {
+  max-width: 490px;
+  margin: auto;
+}
 
-    .hero__desc__statement {
-      max-width: 490px;
-      margin: auto;
-    }
-
-    .hero__btn {
-      margin-top: 4 * $unit;
-    }
-  }
-
+.hero__btn {
+  margin-top: 4 * $unit;
 }
