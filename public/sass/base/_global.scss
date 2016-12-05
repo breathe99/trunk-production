@@ -38,8 +38,6 @@ hr {
 }
 
 .section__desc {
-  @include pre(3);
-  @include span(6 of 12);
-  display: block;
-  margin-bottom: 8 * $unit;
+  margin: 0 auto 64px;
+  width: 70%;
 }
