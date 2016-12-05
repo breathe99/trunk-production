@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "webpack -p && node ./bin/www",
-    "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"node-sass --watch --source-map true public/sass/styles.scss public/styles/styles.css\" \"postcss -u autoprefixer -r public/styles/styles.css\"",
+    "watch-css": "nodemon -e scss -x \"node-sass --source-map true public/sass/styles.scss public/styles/styles.css && postcss -u autoprefixer -r public/styles/styles.css\"",
+    "serve": "concurrently \"nodemon --ignore public/ ./bin/www\" \"webpack --watch -d\" \"npm run watch-css\"",
     "build": "webpack -p && node-sass --output-style compressed public/sass/ -o public/styles/ && postcss -u autoprefixer -r public/styles/styles.css"
   },
   "dependencies": {
